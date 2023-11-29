@@ -1,40 +1,28 @@
 function Hero() {
   return (
-    <div className="main-container bg-gray-900">
-      <div className="mx-4 bg-gray-900 text-white rounded-xl border border-white h-screen flex flex-col justify-center">
+    <div className="main-container bg-transparent">
+      <div className="mx-4 bg-stone-900 text-white rounded-xl border border-gray-200  h-screen flex flex-col justify-center">
         <div className="w-full overflow-x-hidden"></div>
+        <div
+          style={{ marginTop: "-15rem" }}
+          className="p-0 bg-stone-900 flex flex-wrap-reverse justify-between gap-2"
+        >
+          <div className="text-center p-5 py-5 flex-1">
+            <h2 className="font-Heebo font-bold text-5xl py-0 text-gray-200 md:text-6xl">
+              Jonas Söderholm
+            </h2>
+            <h3 className="font-Heebo font-bold text-2xl py-0 dark:text-gray-200 md:text-3xl">
+              Developer and designer.
+            </h3>
+            <p className="text-md py-2 dark:text-gray-200 max-w-xl mx-auto text-s">
+              Former vr game developer pursuing his love for web development
+              with 3D skills in his pockets.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
   );
 }
 
 export default Hero;
-
-//     <div className="p-1 bg-slate-900 flex flex-wrap-reverse justify-between gap-2">
-//       <div className="p-10 flex-1 bg-red-500">
-//         <h2 style={{ fontSize: "5vh" }} className="text-cyan-500">
-//           Jonas Söderholm
-//         </h2>
-//         <h2 style={{ fontSize: "4vh" }} className="text-black-500 text-white">
-//           Developer and Designer
-//         </h2>
-//         <p className="pt-2 text-white">
-//           Aasdasda asd asd a sd asa sdas d asdasdasdasd a sdas d d asa sdas d
-//           asdasdasdasd a sdas d d asa sdas d asdasdasdasd a sdas dd asa sdas d
-//           asdasdasdasd a sdas d
-//         </p>
-//       </div>
-//       <div className="p-10 flex-1  bg-blue-500">
-//         <h2 style={{ fontSize: "5vh" }} className="text-cyan-500">
-//           Jonas Söderholm
-//         </h2>
-//         <h2 style={{ fontSize: "4vh" }} className="text-black-500 text-white">
-//           Developer and Designer
-//         </h2>
-//         <p className=" pt-2 text-white">
-//           Aasdasda asd asd a sd asa sdas d asdasdasdasd a sdas d d asa sdas d
-//           asdasdasdasd a sdas d d asa sdas d asdasdasdasd a sdas dd asa sdas d
-//           asdasdasdasd a sdas d
-//         </p>
-//       </div>
-//     </div>

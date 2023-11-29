@@ -8,7 +8,7 @@ function Navbar() {
     <>
       <div
         className="Navbar flex justify-between items-center p-5
-        bg-gray-900 text-white"
+        bg-transparent text-gray-200 "
       >
         <div className="flex items-center">
           <img src="/sweden-flag.png" alt="" className="w-11 h-auto" />
@@ -23,10 +23,10 @@ function Navbar() {
               <BsFillMoonStarsFill />
             </li>
             <li>
-              <button className="git-btn bg-transparent text-white p-1.5 ml-3 rounded-lg border-2 border-white ">
+              <button className="git-btn bg-transparent text-gray-200  p-1.5 ml-3 rounded-lg border-2 border-gray-200  ">
                 Resume
               </button>
-              <button className="git-btn  bg-white text-black p-2 ml-3 rounded-lg ">
+              <button className="git-btn  bg-gray-200  text-black p-2 ml-3 rounded-lg ">
                 Git repos
               </button>
             </li>
