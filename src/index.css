@@ -5,23 +5,28 @@
 @tailwind utilities;
 
 body {
-  background-image: url("/dotg.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
+  /* background-image: url("/grid.png");
+  background-size: 150%; */
+  background-repeat: repeat;
   background-attachment: fixed;
   background-color: rgb(49, 49, 49);
   font-family: "Heebo", sans-serif;
+  background-position: -0px -17px;
 }
 
-.asdasd {
-  font-size: 25px;
+.toolkit-content {
+  font-size: 15px;
 }
 
 @media (max-width: 768px) {
-  .asdasd {
-    font-size: 15px;
+  .toolkit-content {
+    font-size: 13px;
     flex-direction: column;
     gap: 10px;
     align-items: center;
   }
+}
+
+.card {
+  max-width: 200px;
 }
