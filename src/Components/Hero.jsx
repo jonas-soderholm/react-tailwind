@@ -1,12 +1,9 @@
 function Hero() {
   return (
     <div className="main-container bg-transparent">
-      <div className="mx-4 bg-stone-900 text-white rounded-xl border border-gray-200  h-screen flex flex-col justify-center">
+      <div className="asdasd mx-4 bg-stone-900 text-white rounded-xl border border-gray-200 h-[85vh] flex flex-col justify-center overflow-hidden">
         <div className="w-full overflow-x-hidden"></div>
-        <div
-          style={{ marginTop: "-15rem" }}
-          className="p-0 bg-stone-900 flex flex-wrap-reverse justify-between gap-2"
-        >
+        <div className="p-0 bg-stone-900 flex flex-wrap-reverse justify-between gap-2">
           <div className="text-center p-5 py-5 flex-1">
             <h2 className="font-Heebo font-bold text-5xl py-0 text-gray-200 md:text-6xl">
               Jonas Söderholm
