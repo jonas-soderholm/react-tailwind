@@ -1,12 +1,4 @@
-import backgroundImage from "/gg.png";
-
 function Hero() {
-  const backgroundStyle = {
-    backgroundImage: `url(${backgroundImage})`,
-    backgroundSize: "cover", // Adjust background properties as needed
-    backgroundPosition: "center",
-  };
-
   return (
     <div className="main-container bg-transparent">
       <div className="hero-content mx-4 bg-stone-900 text-white rounded-xl border border-gray-500 h-[85vh] flex flex-col justify-center overflow-hidden">
@@ -16,7 +8,7 @@ function Hero() {
             <h2 className="font-Heebo font-bold text-5xl py-0 text-gray-200 md:text-6xl">
               Jonas Söderholm
             </h2>
-            <h3 className="font-Heebo font-bold text-2xl py-0 dark:text-green-500 md:text-3xl">
+            <h3 className="font-Heebo font-bold text-2xl py-0 text-green-500 md:text-3xl">
               Developer, designer and agile.
             </h3>
             <p className="text-md py-2 dark:text-gray-200 max-w-xl mx-auto text-s">

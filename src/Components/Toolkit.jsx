@@ -1,4 +1,5 @@
 import React from "react";
+import backgroundImage from "/grid.png";
 
 const toolsData1 = [
   { logoSrc: "/react-logo.png", name: "React" },
@@ -23,6 +24,12 @@ const toolsData2 = [
   { logoSrc: "/davinci-logo.png", name: "Davinci Resolve" },
   { logoSrc: "/fl-logo.png", name: "FL Studio" },
 ];
+
+const backgroundStyle = {
+  backgroundImage: `url(${backgroundImage})`,
+  backgroundSize: "cover", // Adjust background properties as needed
+  backgroundPosition: "center",
+};
 
 function Toolkit() {
   return (
