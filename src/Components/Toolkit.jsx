@@ -4,17 +4,17 @@ function Toolkit() {
   return (
     <div className="">
       <div className="flex bg-transparent justify-center text-center">
-        <div className="font-bold p-10 text-3xl text-gray-200">Toolkits</div>
+        <div className="font-bold p-10 text-3xl text-gray-200">Toolkit</div>
       </div>
       <div className="asdasd flex justify-center text-center gap-10 ml-4 mr-4 ">
-        <div className=" font-bold text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-md justify-center rounded-xl border bg-stone-900">
+        <div className=" font-bold text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-xl justify-center rounded-xl border bg-stone-900">
           <div className="font-bold rounded-xl border px-2 py-1 flex items-center justify-center">
             <div className="p-1 flex items-center ">
               <img src="/react-logo.png" alt="" className="w-5 h-auto mr-0" />
             </div>
             <div className="p-1 flex items-center">React</div>
           </div>
-          <div className="font-bold rounded-xl border px-2 py-1 flex items-center justify-center">
+          <div className="font-bold rounded-xl border px-2 py-1 flex items-center justify-center ">
             <div className="p-1 flex items-center ">
               <img src="/threejs-logo.png" alt="" className="w-5 h-auto mr-0" />
             </div>
@@ -61,7 +61,7 @@ function Toolkit() {
             <div className="p-1 flex items-center">C-Sharp</div>
           </div>
         </div>
-        <div className=" font-bold text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-md justify-center rounded-xl border bg-stone-900">
+        <div className=" font-bold text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-xl justify-center rounded-xl border bg-stone-900">
           <div className="font-bold rounded-xl border px-2 py-1 flex items-center justify-center">
             <div className="p-1 flex items-center ">
               <img src="/git-logo.png" alt="" className="w-5 h-auto mr-0" />
@@ -85,6 +85,12 @@ function Toolkit() {
               <img src="/unity-logo.png" alt="" className="w-5 h-auto mr-0" />
             </div>
             <div className="p-1 flex items-center">Unity</div>
+          </div>
+          <div className="font-bold rounded-xl border px-2 py-1 flex items-center justify-center">
+            <div className="p-1 flex items-center ">
+              <img src="/meta-logo.png" alt="" className="w-5 h-auto mr-0" />
+            </div>
+            <div className="p-1 flex items-center">Oculus Api</div>
           </div>
           <div className="font-bold rounded-xl border px-2 py-1 flex items-center justify-center">
             <div className="p-1 flex items-center ">
