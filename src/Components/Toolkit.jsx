@@ -35,11 +35,11 @@ function Toolkit() {
   return (
     <>
       <div className="flex bg-transparent justify-center text-center">
-        <div className="font-bold p-16 text-4xl text-gray-200 mt-14">
+        <div className="font-bold text-gray-200 items-center text-7xl my-36">
           Toolkit
         </div>
       </div>
-      <div className="toolkit-content flex justify-center text-center gap-10 ml-4 mr-4">
+      <div className="toolkit-content flex justify-center text-center gap-4 ml-4 mr-4">
         <div className="font-bold text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-xl justify-center rounded-xl border bg-stone-900 border-gray-500">
           {toolsData1.map((tool, index) => (
             <div

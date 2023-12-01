@@ -41,7 +41,6 @@ body {
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-  padding: 1rem;
   transition: grid-template-rows 0.5s ease-in-out;
 }
 

@@ -1,15 +1,15 @@
 function Contact() {
   return (
     <div>
-      <section className="text-gray-700 body-font relative">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-12">
-            <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-300">
-              Contact ME
+      <section className="text-gray-700 body-font ">
+        <div className="container px-4 mx-auto">
+          <div className="flex flex-col text-center w-full">
+            <h1 className="font-bold text-gray-300 text-7xl my-36 mb-28">
+              Let's talk! :{")"}
             </h1>
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
-            <div className="flex flex-wrap -m-2">
+            <div className="flex flex-wrap ">
               <div className="p-2 w-1/2">
                 <div className="relative">
                   <label for="name" className="leading-7 text-sm text-gray-300">
@@ -50,23 +50,35 @@ function Contact() {
                   <textarea
                     id="message"
                     name="message"
-                    className="w-full bg-gray-100 rounded border border-gray-300 focus:border-indigo-500 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                    className="w-full bg-gray-100 rounded border border-gray-300 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                   ></textarea>
                 </div>
               </div>
               <div className="p-5 w-full">
-                <button className="flex mx-auto text-black bg-gray-300 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                <button className="flex mx-auto text-black bg-gray-300 border-0 py-2 px-8 focus:outline-none hover:bg-gray-500 rounded text-lg">
                   Send
                 </button>
               </div>
               <div className="p-2 w-full pt-5 mt-2  text-center">
                 <a className="text-gray-300">jonas.soderholm89@gmail.com</a>
-                <p className="leading-normal my-3 text-gray-300">
+                <p className="leading-normal mt-3 mb-2 text-gray-300">
                   Stockholm, Sweden
                 </p>
+                <span
+                  role="img"
+                  aria-label="heart"
+                  style={{
+                    color: "red",
+                    fontSize: "40px",
+                    verticalAlign: "middle",
+                  }}
+                >
+                  ❤️
+                </span>
               </div>
             </div>
           </div>
+          <div className=""></div>
         </div>
       </section>
     </div>

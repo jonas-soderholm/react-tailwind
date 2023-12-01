@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function ProjectsSecond() {
+function Experience() {
   const [selectedItem, setSelectedItem] = useState("item-1");
 
   // Define a function to handle item clicks
@@ -54,7 +54,7 @@ function ProjectsSecond() {
     return (
       <button
         onClick={() => onClick(name)}
-        className={`${name} rounded-lg flex justify-between bg-stone-900`}
+        className={`${name} rounded-lg flex justify-between bg-stone-900 mx-4 `}
       >
         <div className="text-gray-200 max-w-xs overflow-hidden text-left ">
           <a className="font-bold">{header}</a>
@@ -66,18 +66,16 @@ function ProjectsSecond() {
     );
   };
 
-  console.log("selectedItem:", selectedItem);
-
   return (
     <>
       <div className="flex bg-transparent justify-center text-center flex-col ">
-        <div className="font-bold pt-10 text-3xl text-gray-200 p-16 text-4xl mt-14">
+        <div className="font-bold text-gray-200 text-7xl my-36">
           Experience & Education
         </div>
         <div className="text-1xl text-gray-200"></div>
       </div>
       <div
-        className="e-container bg-transparent mt-4"
+        className="e-container bg-transparent"
         style={{
           gridTemplateRows: getGridTemplateRows(),
         }}
@@ -106,4 +104,4 @@ function ProjectsSecond() {
   );
 }
 
-export default ProjectsSecond;
+export default Experience;

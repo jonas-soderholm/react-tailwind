@@ -14,13 +14,13 @@ function Projects() {
 
   return (
     <>
-      <div className="flex bg-transparent justify-center text-center flex-col mt-14 p-16 text-4xl">
+      <div className="flex bg-transparent justify-center text-center flex-col text-7xl my-36 mb-28">
         <div className="font-bold text-gray-200">Projects</div>
-        <div className="text-1xl text-gray-200 text-4xl p-5">
+        <div className="text-gray-200 text-2xl">
           Have a look at my latest work!
         </div>
       </div>
-      <div className="flex gap-1 ml-4 mr-4  justify-center">
+      <div className="flex gap-1 ml-4 mr-4 justify-center">
         <div className="">
           {buttons.map((names, index) => (
             <button
