@@ -9,7 +9,7 @@ function Hero() {
               Jonas Söderholm
             </h2>
             <h3 className="font-Heebo font-bold text-2xl py-0 text-green-500 md:text-3xl">
-              Developer, designer and agile.
+              Agile, developer, designer.
             </h3>
             <p className="text-md py-2 dark:text-gray-200 max-w-xl mx-auto text-s">
               Former vr game developer pursuing his love for web development
