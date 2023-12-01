@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 function ProjectsSecond() {
-  const [selectedItem, setSelectedItem] = useState(1);
+  const [selectedItem, setSelectedItem] = useState("item-1");
 
   // Define a function to handle item clicks
   const handleItemClick = (itemName) => {
@@ -11,13 +11,13 @@ function ProjectsSecond() {
   // Define a function to calculate gridTemplateRows based on selectedItem
   const getGridTemplateRows = () => {
     if (selectedItem === "item-1") {
-      return "150px 50px 50px 50px";
+      return "130px 50px 50px 50px";
     } else if (selectedItem === "item-2") {
-      return "50px 120px 50px 50px";
+      return "50px 130px 50px 50px";
     } else if (selectedItem === "item-3") {
       return "50px 50px 110px 50px";
     } else if (selectedItem === "item-4") {
-      return "50px 50px 50px 80px";
+      return "50px 50px 50px 90px";
     } else {
       return "50px 50px 50px 50px";
     }
@@ -28,25 +28,25 @@ function ProjectsSecond() {
       name: "item-1",
       header: "Nackademin",
       info: "2019-2021. VR-Devoloper at Nackademin Stockholm. Mainly focusing on Unity, C#, Oculus Api and Blender",
-      image: "/sweden-flag.png",
+      image: "/school.png",
     },
     {
       name: "item-2",
       header: "Flowtropolis",
       info: "2021-2023. VR-Developer at www.flowtropolis.se. Great company, great poeple.",
-      image: "/ExWorkers.png",
+      image: "/flow.png",
     },
     {
       name: "item-3",
       header: "Online courses",
       info: "2020-2021. The Odin Project, full stack. Three.js Journey",
-      image: "/sweden-flag.png",
+      image: "/courses.png",
     },
     {
       name: "item-4",
       header: "Books",
       info: "Clean Code, Pragmatic coder",
-      image: "/ExWorkers.png",
+      image: "/books.png",
     },
   ];
 
@@ -54,9 +54,9 @@ function ProjectsSecond() {
     return (
       <button
         onClick={() => onClick(name)}
-        className={`${name} rounded-lg flex justify-between`}
+        className={`${name} rounded-lg flex justify-between bg-stone-900`}
       >
-        <div className="text-gray-200 max-w-xs overflow-hidden text-left">
+        <div className="text-gray-200 max-w-xs overflow-hidden text-left ">
           <a className="font-bold">{header}</a>
           <br />
           <a className="font-thin">{info}</a>
@@ -71,8 +71,8 @@ function ProjectsSecond() {
   return (
     <>
       <div className="flex bg-transparent justify-center text-center flex-col ">
-        <div className="font-bold pt-10 text-3xl text-gray-200">
-          Experience and Education
+        <div className="font-bold pt-10 text-3xl text-gray-200 p-16 text-4xl mt-14">
+          Experience & Education
         </div>
         <div className="text-1xl text-gray-200"></div>
       </div>

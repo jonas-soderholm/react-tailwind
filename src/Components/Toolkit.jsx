@@ -27,7 +27,7 @@ const toolsData2 = [
 
 const backgroundStyle = {
   backgroundImage: `url(${backgroundImage})`,
-  backgroundSize: "cover", // Adjust background properties as needed
+  backgroundSize: "cover",
   backgroundPosition: "center",
 };
 
@@ -35,19 +35,21 @@ function Toolkit() {
   return (
     <>
       <div className="flex bg-transparent justify-center text-center">
-        <div className="font-bold p-10 text-2xl text-gray-200">Toolkit</div>
+        <div className="font-bold p-16 text-4xl text-gray-200 mt-14">
+          Toolkit
+        </div>
       </div>
       <div className="toolkit-content flex justify-center text-center gap-10 ml-4 mr-4">
         <div className="font-bold text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-xl justify-center rounded-xl border bg-stone-900 border-gray-500">
           {toolsData1.map((tool, index) => (
             <div
               key={tool.name}
-              className="font-bold rounded-xl border px-2 py-1 flex items-center justify-center"
+              className="font-bold rounded-xl border px-2 py-1 flex items-center"
             >
-              <div className="p-1 flex items-center">
-                <img src={tool.logoSrc} alt="" className="w-4 h-auto mr-0" />
+              <div className="p-1">
+                <img src={tool.logoSrc} alt="" className="w-4 h-auto" />
               </div>
-              <div className="p-1 flex items-center">{tool.name}</div>
+              <div className="p-1">{tool.name}</div>
             </div>
           ))}
         </div>
@@ -58,7 +60,7 @@ function Toolkit() {
               className="font-bold rounded-xl border px-2 py-1 flex items-center justify-center"
             >
               <div className="p-1 flex items-center">
-                <img src={tool.logoSrc} alt="" className="w-4 h-auto mr-0" />
+                <img src={tool.logoSrc} alt="" className="w-4 h-auto" />
               </div>
               <div className="p-1 flex items-center">{tool.name}</div>
             </div>
