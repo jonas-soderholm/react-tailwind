@@ -1,3 +1,5 @@
+import React from "react";
+
 function Projects() {
   const buttons = [
     { name: "All" },
@@ -8,7 +10,10 @@ function Projects() {
 
   const cards = [
     { Title: "Three.js, 3D scroller", Description: "My three.js project" },
-    { Title: "Three.js2, 3D scroller2", Description: "My three.js project2" },
+    {
+      Title: "Three.js2, 3D scroller2",
+      Description: "My three.js project2 asdasdasd asd asd as das da d",
+    },
     { Title: "Three.js3, 3D scroller3", Description: "My three.js project3" },
   ];
 
@@ -33,31 +38,43 @@ function Projects() {
         </div>
       </div>
       {/* Cards */}
-      <div className="flex mt-5 flex-wrap gap-5 ml-4 mr-4 justify-center">
-        {cards.map((properties) => (
-          <div
-            key={properties.Title}
-            className="card bg-stone-900 p-4 rounded-md border border-gray-500"
-          >
-            <img src="/sweden-flag.png" alt="" className="rounded-md  " />
-            <div className="my-2">
-              <h2 className="text-m font-semibold text-gray-200">
-                {properties.Title}
-              </h2>
-              <div className="flex gap-2">
-                <button className="bg-blue-500 text-gray-200 py-0 px-1 rounded-full mt-1 text-xs">
-                  JavaScript
-                </button>
-                <button className="bg-blue-500 text-gray-200 py-0 px-1 rounded-full mt-1 text-xs">
-                  React
-                </button>
+      <div
+        className="card-container bg-black overflow-hidden mx-auto "
+        style={{ width: "600px" }}
+      >
+        <div
+          className="flex m-5 gap-5 ml-4 mr-4"
+          style={{
+            width: "800px",
+            height: "auto",
+            transform: "translateX(-0px)",
+          }}
+        >
+          {cards.map((properties) => (
+            <div
+              key={properties.Title}
+              className="card bg-stone-900 p-4 rounded-md border border-gray-500"
+            >
+              <img src="/sweden-flag.png" alt="" className="rounded-md" />
+              <div className="my-2">
+                <h2 className="text-xl font-semibold text-gray-200">
+                  {properties.Title}
+                </h2>
+                <div className="flex gap-2">
+                  <button className="bg-blue-500 text-gray-200 py-0 px-1 rounded-full mt-1 text-xs">
+                    JavaScript
+                  </button>
+                  <button className="bg-blue-500 text-gray-200 py-0 px-1 rounded-full mt-1 text-xs">
+                    React
+                  </button>
+                </div>
+                <p className="text-sm mt-1 text-gray-200">
+                  {properties.Description}
+                </p>
               </div>
-              <p className="text-sm mt-1 text-gray-200">
-                {properties.Description}
-              </p>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </>
   );

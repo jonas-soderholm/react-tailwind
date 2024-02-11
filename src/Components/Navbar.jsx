@@ -5,17 +5,21 @@ function Navbar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [IsBurgerMenuOpen, setOpenBurgerMenu] = useState(false);
   const [topValue, setTopValue] = useState("-100px");
-  const [navOpacity, setNavOpacity] = useState("rgba(0, 0, 0, 0.2)");
+  const [navOpacity, setNavOpacity] = useState("rgba(0, 0, 0, 0)");
 
   const burgerClicked = () => {
     setOpenBurgerMenu((prevCheck) => !prevCheck);
 
     if (IsBurgerMenuOpen) {
-      setNavOpacity("rgba(0, 0, 0, 0.2)");
+      setNavOpacity("rgba(0, 0, 0, 0.5)");
       document.body.style.overflow = "auto";
     } else {
       setNavOpacity("rgba(0, 0, 0, 0)");
       document.body.style.overflow = "hidden";
+    }
+
+    if (window.scrollY === 0) {
+      setNavOpacity("rgba(0, 0, 0, 0)");
     }
   };
 
@@ -23,14 +27,15 @@ function Navbar() {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       if (currentScrollPos > prevScrollPos) {
-        console.log("Scrolling Down");
+        // Scroll down, hide navbar
         setTopValue("-100px");
       } else {
+        // Scroll upp, show navbar
         setTopValue("0px");
-        setNavOpacity("rgba(0, 0, 0, 0.2)");
-        console.log("Scrolling Up");
+        setNavOpacity("rgba(0, 0, 0, 0.5)");
       }
 
+      // If navbar at top, hide navbar background
       if (window.scrollY === 0) {
         setNavOpacity("rgba(0, 0, 0, 0)");
       }

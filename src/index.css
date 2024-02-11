@@ -5,11 +5,11 @@
 @tailwind utilities;
 
 body {
-  background-image: url("/grid.png");
+  /* background-image: url("/grid.png"); */
   background-size: 150%;
   background-repeat: repeat;
   background-attachment: fixed;
-  background-color: #22578b;
+  background-color: #271c44;
   font-family: "Heebo", sans-serif;
   background-position: -0px -17px;
 }
@@ -30,11 +30,6 @@ body {
   .resume-btn {
     display: none;
   }
-}
-
-.card {
-  max-width: 250px;
-  height: 350px;
 }
 
 .e-container {

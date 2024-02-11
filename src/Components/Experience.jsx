@@ -55,11 +55,12 @@ function Experience() {
       <button
         onClick={() => onClick(name)}
         className={`${name} rounded-lg flex justify-between bg-stone-900 mx-4 `}
+        style={{ overflow: "hidden" }}
       >
-        <div className="text-gray-200 max-w-xs overflow-hidden text-left ">
+        <div className="text-gray-200 max-w-xs overflow-hidden text-left">
           <a className="font-bold">{header}</a>
           <br />
-          <a className="font-thin">{info}</a>
+          <a className="flex font-thin mt-2">{info}</a>
         </div>
         <div className="font-bold text-gray-200">+</div>
       </button>
