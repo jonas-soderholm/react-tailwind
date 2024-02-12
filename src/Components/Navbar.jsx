@@ -50,44 +50,81 @@ function Navbar() {
     };
   }, [prevScrollPos]);
 
+  const BurgerNavLinks = ({ href, children }) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="inline-block px-4 py-2 rounded-md text-center text-white hover:text-slate-400 mx-4"
+    >
+      {children}
+    </a>
+  );
+
+  const ClassicNavLinks = ({ href, children }) => (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className=" rounded-md text-center text-white hover:text-slate-400 mx-1"
+    >
+      {children}
+    </a>
+  );
+
   return (
     <>
-      <div className=""></div>
       <div
+        className="navbar-container flex justify-between items-center p-5
+        text-gray-200 sticky z-20 transition-top ease-in-out duration-300"
         style={{
           top: topValue,
           backgroundColor: navOpacity,
         }}
-        className="Navbar flex justify-between items-center p-5
-        text-gray-200 sticky z-20 transition-top ease-in-out duration-300"
       >
         <div className="flex items-center">
           <img src="/sweden-flag.png" alt="" className="w-11 h-auto" />
-          {/* <div className="ml-2">
-            <h2 style={{ fontSize: "10px" }}>Stockholm</h2>
-          </div> */}
         </div>
         <div className="nav-links">
-          <ul className="flex gap-4 text-1xl items-center ">
-            <li className="">
+          <ul className="flex text-1xl items-center ">
+            <a
+              className="mx-4 hover:text-slate-500"
+              href="https://www.google.se"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <BsFillMoonStarsFill />
-            </li>
+            </a>
             <li className="flex">
-              {/* <div className=" flex items-center gap-1">
-                <a href="gap-2">Toolkit,</a>
-                <a href="">Projects,</a>
-                <a href="">Experience,</a>
-                <a href="">Contact</a>
-              </div> */}
-              <button className="resume-btn bg-transparent text-gray-200  p-1.5 ml-3 rounded-lg border-2 border-gray-200  ">
+              <div
+                className=" items-center hidden md:flex gap-3 "
+                style={{
+                  visibility: "flex",
+                }}
+              >
+                <ClassicNavLinks href="https://www.google.se">
+                  Toolkit
+                </ClassicNavLinks>
+                <ClassicNavLinks href="https://www.google.se">
+                  Projects
+                </ClassicNavLinks>
+                <ClassicNavLinks href="https://www.google.se">
+                  Experience
+                </ClassicNavLinks>
+                <ClassicNavLinks href="https://www.google.se">
+                  Contact
+                </ClassicNavLinks>
+              </div>
+              <button className="resume-btn bg-transparent text-gray-200 hover:text-slate-400 hover:border-gray-400 p-1.5 ml-3 rounded-lg border-2 border-gray-200  ">
                 Resume
               </button>
-              <button className="repo-btn bg-gray-200  text-black p-2 ml-3 rounded-lg ">
+              <button className="repo-btn hover:bg-gray-400 bg-gray-200  text-black p-2 ml-3 rounded-lg ">
                 Git repo
               </button>
             </li>
             <li>
               <button
+                className="z-30 relative md:hidden "
                 onClick={burgerClicked}
                 style={{
                   fontSize: "35px",
@@ -96,9 +133,8 @@ function Navbar() {
                   background: "none",
                   cursor: "pointer",
                 }}
-                className="z-30 relative"
               >
-                <BsList className="burger-btn" />
+                <BsList className="burger-btn hover:text-gray-400" />
               </button>
             </li>
           </ul>
@@ -126,10 +162,22 @@ function Navbar() {
       >
         <ul className="">
           <li className="flex flex-col font-bold text-white text-3xl gap-10 z-40 mt-32">
-            <button>Toolkit</button>
-            <button>Projects</button>
-            <button>Experience</button>
-            <button>Contact</button>
+            <BurgerNavLinks href="https://www.google.se">
+              Toolkit
+            </BurgerNavLinks>
+            <BurgerNavLinks href="https://www.google.se">
+              Projects
+            </BurgerNavLinks>
+            <BurgerNavLinks href="https://www.google.se">
+              Experience
+            </BurgerNavLinks>
+            <BurgerNavLinks href="https://www.google.se">
+              Contact
+            </BurgerNavLinks>
+            <BurgerNavLinks href="https://www.google.se">
+              Git Repo
+            </BurgerNavLinks>
+            <BurgerNavLinks href="https://www.google.se">CV</BurgerNavLinks>
           </li>
         </ul>
       </div>

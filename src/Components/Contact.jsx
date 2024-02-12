@@ -4,13 +4,13 @@ function Contact() {
       <section className="text-gray-700 body-font ">
         <div className="container px-4 mx-auto">
           <div className="flex flex-col text-center w-full">
-            <h1 className="font-bold text-gray-300 text-7xl my-36 mb-28">
+            <h1 className="font-bold text-gray-300 text-7xl my-36 mb-1">
               Let's talk! :{")"}
             </h1>
           </div>
           <div className="lg:w-1/2 md:w-2/3 mx-auto">
             <div className="flex flex-wrap ">
-              <div className="p-2 w-1/2">
+              {/* <div className="p-2 w-1/2">
                 <div className="relative">
                   <label for="name" className="leading-7 text-sm text-gray-300">
                     Name
@@ -22,8 +22,8 @@ function Contact() {
                     className="w-full bg-gray-100 rounded border border-gray-300  text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
-              </div>
-              <div className="p-2 w-1/2">
+              </div> */}
+              {/* <div className="p-2 w-1/2">
                 <div className="relative">
                   <label
                     for="email"
@@ -38,8 +38,8 @@ function Contact() {
                     className="w-full bg-gray-100 rounded border border-gray-300 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
                   />
                 </div>
-              </div>
-              <div className="p-2 w-full">
+              </div> */}
+              {/* <div className="p-2 w-full">
                 <div className="relative">
                   <label
                     for="message"
@@ -58,10 +58,10 @@ function Contact() {
                 <button className="flex mx-auto text-black bg-gray-300 border-0 py-2 px-8 focus:outline-none hover:bg-gray-500 rounded text-lg">
                   Send
                 </button>
-              </div>
-              <div className="p-2 w-full pt-5 mt-2  text-center">
+              </div> */}
+              <div className="p-2 w-full pt-5 mt-0  text-center">
                 <a className="text-gray-300">jonas.soderholm89@gmail.com</a>
-                <p className="leading-normal mt-3 mb-2 text-gray-300">
+                <p className="leading-normal mt-3 mb-6 text-gray-300">
                   Stockholm, Sweden
                 </p>
                 <span
@@ -78,7 +78,7 @@ function Contact() {
               </div>
             </div>
           </div>
-          <div className=""></div>
+          <div className=" mb-5"></div>
         </div>
       </section>
     </div>

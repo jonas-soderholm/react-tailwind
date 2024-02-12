@@ -9,6 +9,7 @@ body {
   background-size: 150%;
   background-repeat: repeat;
   background-attachment: fixed;
+  /* background-color: #8574b0; */
   background-color: #271c44;
   font-family: "Heebo", sans-serif;
   background-position: -0px -17px;
@@ -28,6 +29,11 @@ body {
 
   .repo-btn,
   .resume-btn {
+    display: none;
+  }
+
+  .toggle-buttons,
+  .gradient-design {
     display: none;
   }
 }

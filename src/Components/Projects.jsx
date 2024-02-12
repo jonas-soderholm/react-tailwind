@@ -1,15 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 
 function Projects() {
-  const [toggleXPosition, setToggleXPosition] = useState(1);
-  const [isRightButtonVisible, setIsRightButtonVisible] = useState(true);
-
-  const CategoryButtons = [
-    { name: "All" },
-    { name: "2D" },
-    { name: "3D" },
-    { name: "VR" },
-  ];
+  const containerRef = useRef(null);
 
   const cards = [
     {
@@ -34,64 +26,7 @@ function Projects() {
     },
   ];
 
-  function toggleClick(position) {
-    if (position === "left" && toggleXPosition !== 1) {
-      setToggleXPosition(toggleXPosition + 30);
-      setIsRightButtonVisible(true);
-    } else if (position === "right" && toggleXPosition !== -29) {
-      setToggleXPosition(toggleXPosition - 30);
-      setIsRightButtonVisible(false);
-    }
-  }
-
-  const TypeOfCardsButtons = () => {
-    return (
-      <div className="card-information flex gap-1 ml-4 mr-4 justify-center">
-        {CategoryButtons.map((names, index) => (
-          <button
-            key={index}
-            className="git-btn mr-1 bg-gray-200 text-black p-2 ml-1 rounded-sm font-Heebo font-bold border-1"
-          >
-            {names.name}
-          </button>
-        ))}
-      </div>
-    );
-  };
-
-  const ScrollButton = ({ position, onClick }) => {
-    return (
-      <button
-        className={`scroll-button bg-gray-100 absolute top-1/2 ${
-          position === "right"
-            ? "right-0 -translate-x-5"
-            : "left-0 translate-x-5"
-        } -translate-y-1/2
-          rounded-full h-14 w-14 flex items-center justify-center text-4xl hover:bg-gray-300 ${
-            position === "left" ? "rotate-180" : ""
-          }`}
-        onClick={onClick}
-        style={{
-          visibility:
-            position === "right"
-              ? isRightButtonVisible
-                ? "visible"
-                : "hidden"
-              : isRightButtonVisible
-              ? "hidden"
-              : "visible",
-        }}
-      >
-        <img src="./public/arrow-right.svg" alt="" />
-      </button>
-    );
-  };
-
-  const handleCardClick = (title) => {
-    console.log(`Card clicked: ${title}`);
-  };
-
-  const RenderCards = () => {
+  function RenderCards() {
     return cards.map((properties) => (
       <div
         href:key={properties.title}
@@ -117,7 +52,52 @@ function Projects() {
         </div>
       </div>
     ));
+  }
+
+  const handleCardClick = (title) => {
+    console.log(`Card clicked: ${title}`);
   };
+
+  function toggleClick(position, scrollOffset) {
+    const container = containerRef.current;
+    const maxScroll = container.scrollWidth - container.clientWidth;
+
+    // Scroll
+    if (container) {
+      if (position === "left") {
+        container.scrollTo({
+          left: container.scrollLeft - scrollOffset,
+          behavior: "smooth",
+        });
+      } else if (position === "right") {
+        container.scrollTo({
+          left: container.scrollLeft + scrollOffset,
+          behavior: "smooth",
+        });
+      }
+    }
+
+    // Button visuals
+    if (container.scrollLeft === 0) {
+    }
+    if (container.scrollLeft > maxScroll - 2) {
+    }
+  }
+
+  function ScrollButton({ position, onClick }) {
+    return (
+      <button
+        className={`toggle-buttons flex scroll-button bg-gray-100 rounded-full h-14 w-14 
+          hover:bg-gray-300 text-4xl items-center justify-center mx-8 
+          
+          ${position === "right" ? "" : "rotate-180"}
+           `}
+        onClick={onClick}
+      >
+        <img src="./public/arrow-right.svg" alt="" />
+      </button>
+    );
+  }
 
   return (
     <>
@@ -127,29 +107,37 @@ function Projects() {
           Have a look at my latest work!
         </div>
       </div>
-      {/* <TypeOfCardsButtons /> */}
+      <div className="toggle-buttons flex justify-center mt-4 mx-4 ">
+        <ScrollButton
+          position="left"
+          onClick={() => toggleClick("left", 200)}
+        />
+        <ScrollButton
+          position="right"
+          onClick={() => toggleClick("right", 200)}
+        />
+      </div>
+
       <div
-        className="card-container overflow-hidden mx-auto relative mt-24"
-        style={{ width: "600px" }}
+        className="card-container overflow-scroll mx-auto mt-8 scrollbar-hide md:w-300"
+        style={{ maxWidth: "600px" }}
+        ref={containerRef}
       >
         <div
-          className="boxer flex bg-white absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none"
+          className="gradient-design flex absolute bg-white pointer-events-none"
           style={{
-            height: "400px",
-            width: "150px",
+            height: "420px",
+            width: "175px",
+            transform: "translateY(10px)" + "translateX(430px)",
             background:
               "linear-gradient(to right, rgba(255,255,255,0), #271c44)",
           }}
         ></div>
-        <ScrollButton position="right" onClick={() => toggleClick("right")} />
-        <ScrollButton position="left" onClick={() => toggleClick("left")} />
         <div
           className="individual-cards flex m-5 gap-5 ml-4 mr-4"
           style={{
             width: "1000px",
             height: "400px",
-            transition: "margin 0.5s ease",
-            marginLeft: `${toggleXPosition}rem`,
           }}
         >
           <RenderCards />
