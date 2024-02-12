@@ -89,7 +89,7 @@ function Projects() {
            `}
         onClick={onClick}
       >
-        <img src="./public/arrow-right.svg" alt="" />
+        <img src="./arrow-right.svg" alt="" />
       </button>
     );
   }
