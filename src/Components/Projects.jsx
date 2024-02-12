@@ -26,6 +26,10 @@ function Projects() {
     },
   ];
 
+  const handleCardClick = (title) => {
+    console.log(`Card clicked: ${title}`);
+  };
+
   function RenderCards() {
     return cards.map((properties) => (
       <div
@@ -35,15 +39,10 @@ function Projects() {
       >
         <img src="/sweden-flag.png" alt="" className="rounded-md" />
         <div className="my-2">
-          <h2 className="text-xl font-semibold text-gray-200">
-            {properties.title}
-          </h2>
+          <h2 className="text-xl font-semibold text-gray-200">{properties.title}</h2>
           <div className="flex gap-2">
             {properties.language.map((language, index) => (
-              <button
-                key={index}
-                className="bg-blue-500 text-gray-200 py-0 px-1 rounded-full mt-1 text-xs"
-              >
+              <button key={index} className="bg-blue-500 text-gray-200 py-0 px-1 rounded-full mt-1 text-xs">
                 {language}
               </button>
             ))}
@@ -53,10 +52,6 @@ function Projects() {
       </div>
     ));
   }
-
-  const handleCardClick = (title) => {
-    console.log(`Card clicked: ${title}`);
-  };
 
   function toggleClick(position, scrollOffset) {
     const container = containerRef.current;
@@ -103,19 +98,11 @@ function Projects() {
     <>
       <div className="project-header flex justify-center text-center flex-col text-7xl mt-36 mb-10">
         <div className="font-bold text-gray-200">Projects</div>
-        <div className="text-gray-200 text-2xl">
-          Have a look at my latest work!
-        </div>
+        <div className="text-gray-200 text-2xl">Have a look at my latest work!</div>
       </div>
       <div className="toggle-buttons flex justify-center mt-4 mx-4 ">
-        <ScrollButton
-          position="left"
-          onClick={() => toggleClick("left", 200)}
-        />
-        <ScrollButton
-          position="right"
-          onClick={() => toggleClick("right", 200)}
-        />
+        <ScrollButton position="left" onClick={() => toggleClick("left", 200)} />
+        <ScrollButton position="right" onClick={() => toggleClick("right", 200)} />
       </div>
 
       <div
@@ -129,8 +116,7 @@ function Projects() {
             height: "420px",
             width: "175px",
             transform: "translateY(10px)" + "translateX(430px)",
-            background:
-              "linear-gradient(to right, rgba(255,255,255,0), #271c44)",
+            background: "linear-gradient(to right, rgba(255,255,255,0), #271c44)",
           }}
         ></div>
         <div

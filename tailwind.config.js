@@ -7,5 +7,5 @@ export default {
       Heebo: ["Heebo"],
     },
   },
-  plugins: [require("tailwind-scrollbar-hide")],
+  plugins: [require("tailwind-scrollbar-hide"), "prettier-plugin-tailwindcss"],
 };

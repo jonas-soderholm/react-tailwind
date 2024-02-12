@@ -3,12 +3,12 @@ import { BsFillMoonStarsFill, BsList } from "react-icons/bs";
 
 function Navbar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [IsBurgerMenuOpen, setOpenBurgerMenu] = useState(false);
+  const [IsBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [topValue, setTopValue] = useState("-100px");
   const [navOpacity, setNavOpacity] = useState("rgba(0, 0, 0, 0)");
 
-  const burgerClicked = () => {
-    setOpenBurgerMenu((prevCheck) => !prevCheck);
+  const handleBurgerClick = () => {
+    setIsBurgerMenuOpen((prevCheck) => !prevCheck);
 
     if (IsBurgerMenuOpen) {
       setNavOpacity("rgba(0, 0, 0, 0.5)");
@@ -23,6 +23,7 @@ function Navbar() {
     }
   };
 
+  // Handle scroll behavior
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
@@ -50,27 +51,55 @@ function Navbar() {
     };
   }, [prevScrollPos]);
 
-  const BurgerNavLinks = ({ href, children }) => (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="inline-block px-4 py-2 rounded-md text-center text-white hover:text-slate-400 mx-4"
-    >
-      {children}
-    </a>
-  );
+  function BurgerNavLinks({ href, children }) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="inline-block px-4 py-2 rounded-md text-center text-white hover:text-slate-400 mx-4"
+      >
+        {children}
+      </a>
+    );
+  }
 
-  const ClassicNavLinks = ({ href, children }) => (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className=" rounded-md text-center text-white hover:text-slate-400 mx-1"
-    >
-      {children}
-    </a>
-  );
+  function ClassicNavLinks({ href, children }) {
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noopener noreferrer"
+        className=" rounded-md text-center text-white hover:text-slate-400 mx-1"
+      >
+        {children}
+      </a>
+    );
+  }
+
+  function ResumeAndGitButtons({ resumeUrl, gitRepoUrl }) {
+    return (
+      <>
+        <a
+          href={resumeUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="resume-btn bg-transparent text-gray-200 hover:text-slate-400 hover:border-gray-400 p-1.5 ml-3 rounded-lg border-2 border-gray-200"
+        >
+          <button>Resume</button>
+        </a>
+
+        <a
+          href={gitRepoUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="repo-btn hover:bg-gray-400 bg-gray-200  text-black p-2 ml-3 rounded-lg "
+        >
+          <button>Git repo</button>
+        </a>
+      </>
+    );
+  }
 
   return (
     <>
@@ -82,50 +111,43 @@ function Navbar() {
           backgroundColor: navOpacity,
         }}
       >
-        <div className="flex items-center">
-          <img src="/sweden-flag.png" alt="" className="w-11 h-auto" />
+        <div className="location-info flex items-center w-11 h-auto">
+          <a
+            href="https://www.google.com/maps/place/Upplands+V%C3%A4sby/@59.5088298,17.7661925,11z/data=!3m1!4b1!4m6!3m5!1s0x465f9780c4285cc1:0xd711b434ff6818b9!8m2!3d59.51961!4d17.92834!16s%2Fm%2F02vk769?entry=ttu"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/sweden-flag.png" alt="" />
+          </a>
         </div>
         <div className="nav-links">
           <ul className="flex text-1xl items-center ">
             <a
-              className="mx-4 hover:text-slate-500"
+              className="darkmode-icon mx-4 hover:text-slate-500"
               href="https://www.google.se"
               target="_blank"
               rel="noopener noreferrer"
             >
               <BsFillMoonStarsFill />
             </a>
-            <li className="flex">
+            <li className="navlinks-classic flex">
               <div
                 className=" items-center hidden md:flex gap-3 "
                 style={{
                   visibility: "flex",
                 }}
               >
-                <ClassicNavLinks href="https://www.google.se">
-                  Toolkit
-                </ClassicNavLinks>
-                <ClassicNavLinks href="https://www.google.se">
-                  Projects
-                </ClassicNavLinks>
-                <ClassicNavLinks href="https://www.google.se">
-                  Experience
-                </ClassicNavLinks>
-                <ClassicNavLinks href="https://www.google.se">
-                  Contact
-                </ClassicNavLinks>
+                <ClassicNavLinks href="https://www.google.se">Toolkit</ClassicNavLinks>
+                <ClassicNavLinks href="https://www.google.se">Projects</ClassicNavLinks>
+                <ClassicNavLinks href="https://www.google.se">Experience</ClassicNavLinks>
+                <ClassicNavLinks href="https://www.google.se">Contact</ClassicNavLinks>
               </div>
-              <button className="resume-btn bg-transparent text-gray-200 hover:text-slate-400 hover:border-gray-400 p-1.5 ml-3 rounded-lg border-2 border-gray-200  ">
-                Resume
-              </button>
-              <button className="repo-btn hover:bg-gray-400 bg-gray-200  text-black p-2 ml-3 rounded-lg ">
-                Git repo
-              </button>
+              <ResumeAndGitButtons resumeUrl="https://www.google.com" gitRepoUrl="https://www.google.com" />
             </li>
-            <li>
+            <li className="burger-menu">
               <button
                 className="z-30 relative md:hidden "
-                onClick={burgerClicked}
+                onClick={handleBurgerClick}
                 style={{
                   fontSize: "35px",
                   border: "2px solid white",
@@ -142,6 +164,7 @@ function Navbar() {
       </div>
 
       <div
+        className="dropdown-menu"
         style={{
           backdropFilter: "blur(10px)",
           backgroundColor: "rgba(4, 4, 4, 0.9)",
@@ -158,25 +181,14 @@ function Navbar() {
           transition: "height 0.3s ease-in-out",
           overflow: "hidden",
         }}
-        className="dropdown-menu"
       >
         <ul className="">
           <li className="flex flex-col font-bold text-white text-3xl gap-10 z-40 mt-32">
-            <BurgerNavLinks href="https://www.google.se">
-              Toolkit
-            </BurgerNavLinks>
-            <BurgerNavLinks href="https://www.google.se">
-              Projects
-            </BurgerNavLinks>
-            <BurgerNavLinks href="https://www.google.se">
-              Experience
-            </BurgerNavLinks>
-            <BurgerNavLinks href="https://www.google.se">
-              Contact
-            </BurgerNavLinks>
-            <BurgerNavLinks href="https://www.google.se">
-              Git Repo
-            </BurgerNavLinks>
+            <BurgerNavLinks href="https://www.google.se">Toolkit</BurgerNavLinks>
+            <BurgerNavLinks href="https://www.google.se">Projects</BurgerNavLinks>
+            <BurgerNavLinks href="https://www.google.se">Experience</BurgerNavLinks>
+            <BurgerNavLinks href="https://www.google.se">Contact</BurgerNavLinks>
+            <BurgerNavLinks href="https://www.google.se">Git Repo</BurgerNavLinks>
             <BurgerNavLinks href="https://www.google.se">CV</BurgerNavLinks>
           </li>
         </ul>

@@ -9,7 +9,7 @@ function Experience() {
   };
 
   // Define a function to calculate gridTemplateRows based on selectedItem
-  const getGridTemplateRows = () => {
+  function GetGridTemplateRow() {
     if (selectedItem === "item-1") {
       return "130px 50px 50px 50px";
     } else if (selectedItem === "item-2") {
@@ -21,9 +21,9 @@ function Experience() {
     } else {
       return "50px 50px 50px 50px";
     }
-  };
+  }
 
-  const itemName = [
+  const experienceInformation = [
     {
       name: "item-1",
       header: "Nackademin",
@@ -50,7 +50,7 @@ function Experience() {
     },
   ];
 
-  const Item = ({ name, header, info, onClick }) => {
+  function Item({ name, header, info, onClick }) {
     return (
       <button
         onClick={() => onClick(name)}
@@ -65,41 +65,41 @@ function Experience() {
         <div className="font-bold text-gray-200">+</div>
       </button>
     );
-  };
+  }
 
-  return (
-    <>
-      <div className="flex bg-transparent justify-center text-center flex-col ">
-        <div className="font-bold text-gray-200 text-7xl my-36">
-          Experience & Education
-        </div>
-        <div className="text-1xl text-gray-200"></div>
-      </div>
-      <div
-        className="e-container bg-transparent"
-        style={{
-          gridTemplateRows: getGridTemplateRows(),
-        }}
-      >
-        {itemName.map((item) => (
-          <Item
-            key={item.name}
-            name={item.name}
-            header={item.header}
-            info={item.info}
-            onClick={handleItemClick}
-          />
+  function MyExperiences() {
+    return (
+      <>
+        {experienceInformation.map((item) => (
+          <Item key={item.name} name={item.name} header={item.header} info={item.info} onClick={handleItemClick} />
         ))}
         <div className="item-5 rounded-lg">
           {selectedItem && (
             <img
-              src={itemName.find((item) => item.name === selectedItem)?.image}
+              src={experienceInformation.find((item) => item.name === selectedItem)?.image}
               alt=""
               className="rounded-md"
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
           )}
         </div>
+      </>
+    );
+  }
+
+  return (
+    <>
+      <div className="experience-header flex bg-transparent justify-center text-center flex-col ">
+        <div className="font-bold text-gray-200 text-7xl my-36">Experience & Education</div>
+        <div className="text-1xl text-gray-200"></div>
+      </div>
+      <div
+        className="experience-container bg-transparent"
+        style={{
+          gridTemplateRows: GetGridTemplateRow(),
+        }}
+      >
+        <MyExperiences />
       </div>
     </>
   );
