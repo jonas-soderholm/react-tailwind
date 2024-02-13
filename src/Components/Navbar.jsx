@@ -5,7 +5,7 @@ function Navbar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [IsBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [topValue, setTopValue] = useState("-100px");
-  const [navOpacity, setNavOpacity] = useState("rgba(0, 0, 0, 0)");
+  const [navOpacity, setNavOpacity] = useState(0);
 
   const handleBurgerClick = () => {
     setIsBurgerMenuOpen((prevCheck) => !prevCheck);
@@ -22,6 +22,13 @@ function Navbar() {
       setNavOpacity("rgba(0, 0, 0, 0)");
     }
   };
+
+  // Fade in navbar
+  useEffect(() => {
+    setTimeout(() => {
+      setNavOpacity(1);
+    }, 400);
+  }, []);
 
   // Handle scroll behavior
   useEffect(() => {
@@ -109,6 +116,8 @@ function Navbar() {
         style={{
           top: topValue,
           backgroundColor: navOpacity,
+          opacity: navOpacity,
+          transition: "opacity 0.3s ease-in-out",
         }}
       >
         <div className="location-info flex items-center w-11 h-auto">
@@ -132,7 +141,7 @@ function Navbar() {
             </a>
             <li className="navlinks-classic flex">
               <div
-                className=" items-center hidden md:flex gap-3 "
+                className=" items-center hidden md:flex gap-3"
                 style={{
                   visibility: "flex",
                 }}

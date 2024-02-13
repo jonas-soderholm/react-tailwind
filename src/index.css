@@ -17,7 +17,7 @@ body {
 
 @font-face {
   font-family: "Acorn";
-  src: url("./Fonts/Acorn-Medium.ttf") format("woff2");
+  src: url("assets/fonts/Acorn-Medium.ttf") format("woff2");
 }
 
 .header-font {
