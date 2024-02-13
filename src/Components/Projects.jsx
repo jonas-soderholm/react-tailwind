@@ -38,20 +38,20 @@ function Projects() {
     return cards.map((properties) => (
       <div
         href:key={properties.title}
-        className="card bg-stone-900 rounded-3xl  hover:cursor-pointer hover:bg-stone-800 "
+        className="card bg-stone-900 rounded-3xl  hover:cursor-pointer hover:bg-stone-800"
         onClick={() => handleCardClick(properties.title)}
       >
-        <img src={properties.image} alt="" className="rounded-t-2xl" />
+        <img src={properties.image} alt="" className="rounded-t-2xl " />
         <div className=" p-3">
-          <h2 className="text-xl font-semibold text-gray-200">{properties.title}</h2>
+          <h2 className="text-xl font-semibold text-gray-200 header-font">{properties.title}</h2>
           <div className="flex gap-2">
             {properties.language.map((language, index) => (
-              <button key={index} className="bg-blue-500 text-gray-200 py-0 px-1 rounded-full mt-1 text-l">
+              <button key={index} className="bg-blue-500 text-gray-200 py-0 px-1 rounded-full mt-1 text-l ">
                 {language}
               </button>
             ))}
           </div>
-          <p className="text-l mt-2 text-gray-200">{properties.description}</p>
+          <p className="text-l mt-2 text-gray-200 ">{properties.description}</p>
         </div>
       </div>
     ));
@@ -101,7 +101,7 @@ function Projects() {
   return (
     <>
       <div className="project-header flex justify-center text-center flex-col text-7xl mt-36 mb-10">
-        <div className="font-bold text-gray-200">Projects</div>
+        <div className="font-bold text-gray-200  acorn-text">Projects</div>
         <div className="text-gray-200 text-2xl">Have a look at my latest work!</div>
       </div>
       <div className="toggle-buttons flex justify-center mt-4 mx-4 ">
@@ -117,14 +117,14 @@ function Projects() {
         <div
           className="gradient-design flex absolute bg-white pointer-events-none"
           style={{
-            height: "700px",
+            height: "480px",
             width: "370px",
             transform: "translateY(10px)" + "translateX(740px)",
-            background: "linear-gradient(to right, rgba(255,255,255,0), #271c44)",
+            background: "linear-gradient(to right, rgba(255,255,255,0), #152d54)",
           }}
         ></div>
         <div
-          className="individual-cards flex m-5 gap-5 ml-4 mr-4 sm:w-1200 lg:w-1800"
+          className="individual-cards flex m-5 gap-5 ml-4 mr-4 sm:w-1200 lg:w-1800 "
           style={{
             height: "auto",
           }}

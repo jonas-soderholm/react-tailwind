@@ -54,13 +54,13 @@ function Experience() {
     return (
       <button
         onClick={() => onClick(name)}
-        className={`${name} rounded-lg flex justify-between bg-stone-900 mx-4 hover:bg-gray-700`}
+        className={`${name} rounded-lg flex justify-between bg-stone-900 mx-4 hover:bg-gray-700 header-font`}
         style={{ overflow: "hidden" }}
       >
         <div className="text-gray-200 max-w-xs overflow-hidden text-left text-xl mt-1">
           <a className="font-bold text-4xl">{header}</a>
           <br />
-          <a className="flex font-thin mt-3">{info}</a>
+          <a className="font-Heebo flex font-thin mt-3">{info}</a>
         </div>
         <div className="font-bold text-gray-200">+</div>
       </button>
@@ -78,7 +78,7 @@ function Experience() {
             <img
               src={experienceInformation.find((item) => item.name === selectedItem)?.image}
               alt=""
-              className="rounded-md "
+              className="rounded-md"
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
             />
           )}
@@ -90,7 +90,7 @@ function Experience() {
   return (
     <>
       <div className="experience-header flex bg-transparent justify-center text-center flex-col ">
-        <div className="font-bold text-gray-200 text-7xl my-36">Experience & Education</div>
+        <div className="font-bold text-gray-200 text-7xl my-36 header-font">Experience & Education</div>
         <div className="text-1xl text-gray-200"></div>
       </div>
       <div
