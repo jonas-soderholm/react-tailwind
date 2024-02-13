@@ -100,8 +100,8 @@ function Projects() {
 
   return (
     <>
-      <div className="project-header flex justify-center text-center flex-col text-7xl mt-36 mb-10">
-        <div className="font-bold text-gray-200  acorn-text">Projects</div>
+      <div className="project-header flex justify-center text-center flex-col md:text-7xl text-4xl mt-36 mb-10">
+        <div className="font-bold text-gray-200 header-font">Projects</div>
         <div className="text-gray-200 text-2xl">Have a look at my latest work!</div>
       </div>
       <div className="toggle-buttons flex justify-center mt-4 mx-4 ">
@@ -115,16 +115,16 @@ function Projects() {
         ref={containerRef}
       >
         <div
-          className="gradient-design flex absolute bg-white pointer-events-none"
+          className="gradient-design hidden xl:flex absolute bg-white pointer-events-none"
           style={{
             height: "480px",
-            width: "370px",
-            transform: "translateY(10px)" + "translateX(740px)",
-            background: "linear-gradient(to right, rgba(255,255,255,0), #152d54)",
+            width: "300px",
+            transform: "translateY(10px)" + "translateX(810px)",
+            background: "linear-gradient(to right, rgba(21, 45, 84, 0), rgba(21, 45, 84, 1))",
           }}
         ></div>
         <div
-          className="individual-cards flex m-5 gap-5 ml-4 mr-4 sm:w-1200 lg:w-1800 "
+          className="individual-cards flex m-5 gap-5 ml-4 mr-4 md:w-[1200] w-[1800] "
           style={{
             height: "auto",
           }}
