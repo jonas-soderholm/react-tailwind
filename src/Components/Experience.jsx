@@ -11,13 +11,13 @@ function Experience() {
   // Define a function to calculate gridTemplateRows based on selectedItem
   function GetGridTemplateRow() {
     if (selectedItem === "item-1") {
-      return "240px 70px 70px 70px";
+      return "270px 70px 70px 70px";
     } else if (selectedItem === "item-2") {
       return "70px 200px 70px 70px";
     } else if (selectedItem === "item-3") {
-      return "70px 70px 180px 70px";
+      return "70px 70px 190px 70px";
     } else if (selectedItem === "item-4") {
-      return "70px 70px 70px 150px";
+      return "70px 70px 70px 160px";
     } else {
       return "70px 70px 70px 70px";
     }

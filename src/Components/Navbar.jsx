@@ -46,12 +46,12 @@ function Navbar() {
 
   function ClassicNavLinks({ href, children }) {
     return (
-      <div className="  rounded-full py-2">
+      <div className="  rounded-full py-2 md:hover:bg-slate-400">
         <a
           href={href}
           target="_blank"
           rel="noopener noreferrer"
-          className=" rounded-md text-white hover:text-slate-400 mx-1"
+          className=" rounded-md text-slate-200 hover:text-white mx-1"
         >
           {children}
         </a>
@@ -84,7 +84,7 @@ function Navbar() {
           transition: "transform 0.3s ease-in-out",
         }}
       >
-        <div className="nav-links ">
+        <div className="nav-links overflow-hidden">
           <ul className="flex">
             <a
               className="arkmode-icon hover:text-slate-500 flex "
@@ -93,7 +93,8 @@ function Navbar() {
               rel="noopener noreferrer"
             ></a>
             <li
-              className="navlinks-classic bg-gray-200 bg-opacity-5 rounded-full p-2 text-[0.85rem] backdrop-blur-xl mt-5"
+              className="navlinks-classic bg-gray-200 bg-opacity-5 rounded-full md:px-5 px-3 py-2 
+              md:text-[1rem] text-[3.5vw] backdrop-blur-xl mt-5 overflow-hidden"
               style={
                 {
                   //top: topValue,
