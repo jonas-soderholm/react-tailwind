@@ -34,12 +34,11 @@ function Hero() {
   // Animate header and main
   useEffect(() => {
     const animationTimeout = setTimeout(() => {
-      setMainPosition(0);
       setheaderPosition(0);
       setTimeout(() => {
         setUnderHeaderOpacity(1);
-      }, 600);
-    }, 300);
+      }, 700); // Adjusted timing for opacity change
+    }, 0); // Adjusted timing for initial header animation
 
     return () => clearTimeout(animationTimeout);
   }, []);
@@ -49,12 +48,12 @@ function Hero() {
       className="main-container bg-transparent"
       style={{
         transition: "transform 0.3s ease-in-out",
-        transform: `translateY(-${mainPosition}px)`,
+        transform: `translateY(-${0}px)`,
       }}
     >
-      <div className="hero-content mx-4 bg-stone-900 text-white rounded-xl shadow-2xl h-[85vh] flex flex-col justify-center overflow-hidden">
+      <div className="hero-content md:mx-[4rem]  text-white rounded-xl h-[85vh] flex flex-col justify-center overflow-hidden">
         <div className="w-full overflow-x-hidden"></div>
-        <div className="p-0 bg-stone-900 flex justify-between gap-2 relative">
+        <div className="p-0 flex justify-between gap-2 relative">
           <div className="text-center p-5 py-5 flex-1">
             <div className="mainHeaderpt-4 overflow-hidden">
               <h2
@@ -74,12 +73,12 @@ function Hero() {
                 transition: "opacity 0.5s ease-in-out",
               }}
             >
-              <h3 className="font-Heebo font-bold text-2xl py-0 text-green-500 md:text-3xl ">
+              <h3 className="font-Heebo font-bold text-2xl py-0 text-green-500 md:text-3xl body-text-medium">
                 An Agile Developer and Designer.
               </h3>
-              <p className="text-md py-2 dark:text-gray-200 max-w-xl mx-auto text-s font-bold">
+              {/* <p className="text-md py-2 dark:text-gray-200 max-w-xl mx-auto text-s font-bold">
                 Former vr game developer pursuing his love for web development with 3D skills in his pockets.
-              </p>
+              </p> */}
             </div>
           </div>
           <AddStar positionX="80%" positionY="20%" />

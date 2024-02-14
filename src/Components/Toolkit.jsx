@@ -37,7 +37,7 @@ function Toolkit() {
       <div className="toolkit-header flex bg-transparent justify-center text-center">
         <div className="font-bold text-gray-200 items-center md:text-7xl text-4xl my-36 header-font">Toolkit</div>
       </div>
-      <div className="toolkit-content1 md:flex flex-wrap flex justify-center text-center gap-4 gap ml-4 mr-4 ">
+      <div className="toolkit-content1 md:flex flex-wrap flex justify-center text-center gap-4 gap ml-4 mr-4 body-text-medium">
         <div className="font-bold text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-xl justify-center rounded-xl bg-stone-900 shadow-2xl">
           {toolsData1.map((tool, index) => (
             <div key={tool.name} className="font-bold rounded-xl border px-2 py-1 flex items-center">

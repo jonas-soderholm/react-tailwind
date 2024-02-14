@@ -6,41 +6,27 @@ function Navbar() {
   const [IsBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
   const [topValue, setTopValue] = useState("-100px");
   const [navOpacity, setNavOpacity] = useState(0);
+  const [navPos, setNavPos] = useState(-80);
 
-  const handleBurgerClick = () => {
-    setIsBurgerMenuOpen((prevCheck) => !prevCheck);
-
-    if (IsBurgerMenuOpen) {
-      setNavOpacity("rgba(0, 0, 0, 0.5)");
-      document.body.style.overflow = "auto";
-    } else {
-      setNavOpacity("rgba(0, 0, 0, 0)");
-      document.body.style.overflow = "hidden";
-    }
-
-    if (window.scrollY === 0) {
-      setNavOpacity("rgba(0, 0, 0, 0)");
-    }
-  };
-
-  // Fade in navbar
+  //Fade in navbar
   useEffect(() => {
     setTimeout(() => {
       setNavOpacity(1);
-    }, 400);
+      setNavPos(0);
+    }, 0);
   }, []);
 
-  // Handle scroll behavior
+  //Handle scroll behavior
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollPos = window.scrollY;
       if (currentScrollPos > prevScrollPos) {
         // Scroll down, hide navbar
-        setTopValue("-100px");
+        // setTopValue("-100px");
+        //setNavOpacity("rgba(0, 0, 0, 0.5)");
       } else {
         // Scroll upp, show navbar
-        setTopValue("0px");
-        setNavOpacity("rgba(0, 0, 0, 0.5)");
+        //setTopValue("0px");
       }
 
       // If navbar at top, hide navbar background
@@ -58,149 +44,77 @@ function Navbar() {
     };
   }, [prevScrollPos]);
 
-  function BurgerNavLinks({ href, children }) {
-    return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-block px-4 py-2 rounded-md text-center text-white hover:text-slate-400 mx-4"
-      >
-        {children}
-      </a>
-    );
-  }
-
   function ClassicNavLinks({ href, children }) {
     return (
-      <a
-        href={href}
-        target="_blank"
-        rel="noopener noreferrer"
-        className=" rounded-md text-center text-white hover:text-slate-400 mx-1"
-      >
-        {children}
-      </a>
+      <div className="  rounded-full py-2">
+        <a
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className=" rounded-md text-white hover:text-slate-400 mx-1"
+        >
+          {children}
+        </a>
+      </div>
     );
   }
 
-  function ResumeAndGitButtons({ resumeUrl, gitRepoUrl }) {
+  function DarkModeButton() {
     return (
-      <>
-        <a
-          href={resumeUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="resume-btn bg-transparent text-gray-200 hover:text-slate-400 hover:border-gray-400 p-1.5 ml-3 rounded-lg border-2 border-gray-200"
-        >
-          <button>Resume</button>
-        </a>
-
-        <a
-          href={gitRepoUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="repo-btn hover:bg-gray-400 bg-gray-200  text-black p-2 ml-3 rounded-lg "
-        >
-          <button>Git repo</button>
-        </a>
-      </>
+      <a
+        className="arkmode-icon mx-1 hover:text-slate-500 flex items-center px-3 text-xl "
+        href="https://www.google.se"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <BsFillMoonStarsFill />
+      </a>
     );
   }
 
   return (
     <>
       <div
-        className="navbar-container flex justify-between items-center p-5
-        text-gray-200 sticky z-20 transition-top ease-in-out duration-300"
+        className="navbar-container sticky flex justify-center items-center text-gray-200
+         z-20 transition-top ease-in-out duration-300 body-text-medium"
         style={{
-          top: topValue,
-          backgroundColor: navOpacity,
-          opacity: navOpacity,
-          transition: "opacity 0.3s ease-in-out",
+          top: "0",
+          transform: `translateY(${navPos}px)`,
+          //transform: `translateY(0px)`,
+          transition: "transform 0.3s ease-in-out",
         }}
       >
-        <div className="location-info flex items-center w-11 h-auto">
-          <a
-            href="https://www.google.com/maps/place/Upplands+V%C3%A4sby/@59.5088298,17.7661925,11z/data=!3m1!4b1!4m6!3m5!1s0x465f9780c4285cc1:0xd711b434ff6818b9!8m2!3d59.51961!4d17.92834!16s%2Fm%2F02vk769?entry=ttu"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src="/sweden-flag.png" alt="" />
-          </a>
-        </div>
-        <div className="nav-links">
-          <ul className="flex text-1xl items-center ">
+        <div className="nav-links ">
+          <ul className="flex">
             <a
-              className="darkmode-icon mx-4 hover:text-slate-500"
+              className="arkmode-icon hover:text-slate-500 flex "
               href="https://www.google.se"
               target="_blank"
               rel="noopener noreferrer"
+            ></a>
+            <li
+              className="navlinks-classic bg-gray-200 bg-opacity-5 rounded-full p-2 text-[0.85rem] backdrop-blur-xl mt-5"
+              style={
+                {
+                  //top: topValue,
+                  //backgroundColor: navOpacity,
+                  //opacity: navOpacity,
+                  //transition: "opacity 0.3s ease-in-out",
+                }
+              }
             >
-              <BsFillMoonStarsFill />
-            </a>
-            <li className="navlinks-classic flex">
-              <div
-                className=" items-center hidden md:flex gap-3"
-                style={{
-                  visibility: "flex",
-                }}
-              >
+              <div className="flex gap-0 items-center">
                 <ClassicNavLinks href="https://www.google.se">Toolkit</ClassicNavLinks>
                 <ClassicNavLinks href="https://www.google.se">Projects</ClassicNavLinks>
+                <div className="darkmode-normal">
+                  <DarkModeButton />
+                </div>
                 <ClassicNavLinks href="https://www.google.se">Experience</ClassicNavLinks>
                 <ClassicNavLinks href="https://www.google.se">Contact</ClassicNavLinks>
               </div>
-              <ResumeAndGitButtons resumeUrl="https://www.google.com" gitRepoUrl="https://www.google.com" />
-            </li>
-            <li className="burger-menu">
-              <button
-                className="z-30 relative md:hidden "
-                onClick={handleBurgerClick}
-                style={{
-                  fontSize: "35px",
-                  border: "2px solid white",
-                  borderRadius: "10px",
-                  background: "none",
-                  cursor: "pointer",
-                }}
-              >
-                <BsList className="burger-btn hover:text-gray-400" />
-              </button>
             </li>
           </ul>
         </div>
-      </div>
-
-      <div
-        className="dropdown-menu"
-        style={{
-          backdropFilter: "blur(10px)",
-          backgroundColor: "rgba(4, 4, 4, 0.9)",
-          position: "fixed",
-          top: 0,
-          left: 0,
-          width: "100%",
-          // height: "100%",
-          height: IsBurgerMenuOpen ? "100%" : "0%",
-          // display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          zIndex: "10",
-          transition: "height 0.3s ease-in-out",
-          overflow: "hidden",
-        }}
-      >
-        <ul className="">
-          <li className="flex flex-col font-bold text-white text-3xl gap-10 z-40 mt-32">
-            <BurgerNavLinks href="https://www.google.se">Toolkit</BurgerNavLinks>
-            <BurgerNavLinks href="https://www.google.se">Projects</BurgerNavLinks>
-            <BurgerNavLinks href="https://www.google.se">Experience</BurgerNavLinks>
-            <BurgerNavLinks href="https://www.google.se">Contact</BurgerNavLinks>
-            <BurgerNavLinks href="https://www.google.se">Git Repo</BurgerNavLinks>
-            <BurgerNavLinks href="https://www.google.se">CV</BurgerNavLinks>
-          </li>
-        </ul>
       </div>
     </>
   );

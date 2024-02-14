@@ -11,7 +11,7 @@ function Experience() {
   // Define a function to calculate gridTemplateRows based on selectedItem
   function GetGridTemplateRow() {
     if (selectedItem === "item-1") {
-      return "220px 70px 70px 70px";
+      return "240px 70px 70px 70px";
     } else if (selectedItem === "item-2") {
       return "70px 200px 70px 70px";
     } else if (selectedItem === "item-3") {
@@ -38,7 +38,7 @@ function Experience() {
     },
     {
       name: "item-3",
-      header: "Online courses",
+      header: "Courses",
       info: "2020-2021. The Odin Project, full stack. Three.js Journey",
       image: "/courses.png",
     },
@@ -60,9 +60,9 @@ function Experience() {
         <div className="text-gray-200 max-w-xs overflow-hidden text-left text-xl mt-1">
           <a className="font-bold text-4xl">{header}</a>
           <br />
-          <a className="font-Heebo flex font-thin mt-3">{info}</a>
+          <a className="font-Heebo flex font-thin mt-3 body-text-medium">{info}</a>
         </div>
-        <div className="font-bold text-gray-200">+</div>
+        <div className="font-bold text-gray-200"></div>
       </button>
     );
   }

@@ -102,15 +102,15 @@ function Projects() {
     <>
       <div className="project-header flex justify-center text-center flex-col md:text-7xl text-4xl mt-36 mb-10">
         <div className="font-bold text-gray-200 header-font">Projects</div>
-        <div className="text-gray-200 text-2xl">Have a look at my latest work!</div>
+        <div className="text-gray-200 text-2xl body-text-medium">Have a look at my latest work!</div>
       </div>
-      <div className="toggle-buttons flex justify-center mt-4 mx-4 ">
+      <div className="toggle-buttons flex justify-center mt-4 mx-4">
         <ScrollButton position="left" onClick={() => toggleClick("left", 200)} />
         <ScrollButton position="right" onClick={() => toggleClick("right", 200)} />
       </div>
 
       <div
-        className="card-container overflow-scroll mx-auto mt-8 scrollbar-hide md:w-300"
+        className="card-container overflow-scroll mx-auto mt-8 scrollbar-hide md:w-300 body-text-medium"
         style={{ maxWidth: "1100px" }}
         ref={containerRef}
       >

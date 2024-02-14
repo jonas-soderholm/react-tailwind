@@ -20,6 +20,13 @@ body {
   src: url("assets/fonts/Acorn-Medium.ttf") format("woff2");
 }
 
+.body-text-medium {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
 .header-font {
   font-family: "Acorn", sans-serif;
   letter-spacing: 0.1em; /* Adjust as needed */
@@ -114,13 +121,3 @@ body {
     display: none;
   }
 }
-
-/* .hamburger {
-  font-size: 35px;
-  border: 2px solid white;
-  border-radius: 10px;
-  background: none;
-  cursor: pointer;
-  transition: ease-in-out 0.2s;
-  opacity: 1;
-} */
