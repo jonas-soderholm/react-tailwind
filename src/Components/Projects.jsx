@@ -38,7 +38,7 @@ function Projects() {
     return cards.map((properties) => (
       <div
         href:key={properties.title}
-        className="card bg-stone-900 rounded-3xl  hover:cursor-pointer hover:bg-stone-800"
+        className="card bg-stone-800 rounded-3xl  hover:cursor-pointer hover:bg-stone-700"
         onClick={() => handleCardClick(properties.title)}
       >
         <img src={properties.image} alt="" className="rounded-t-2xl " />
@@ -100,6 +100,7 @@ function Projects() {
 
   return (
     <>
+      <div id="projects"></div>
       <div className="project-header flex justify-center text-center flex-col md:text-7xl text-4xl mt-36 mb-10">
         <div className="font-bold text-gray-200 header-font">Projects</div>
         <div className="text-gray-200 text-2xl body-text-medium">Have a look at my latest work!</div>

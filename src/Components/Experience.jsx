@@ -1,22 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 function Experience() {
-  const [selectedItem, setSelectedItem] = useState("item-1");
+  const [selectedObject, setSelectedObject] = useState("item-1");
 
   // Define a function to handle item clicks
   const handleItemClick = (itemName) => {
-    setSelectedItem(itemName);
+    setSelectedObject(itemName);
   };
 
   // Define a function to calculate gridTemplateRows based on selectedItem
   function GetGridTemplateRow() {
-    if (selectedItem === "item-1") {
+    if (selectedObject === "item-1") {
       return "270px 70px 70px 70px";
-    } else if (selectedItem === "item-2") {
+    } else if (selectedObject === "item-2") {
       return "70px 200px 70px 70px";
-    } else if (selectedItem === "item-3") {
+    } else if (selectedObject === "item-3") {
       return "70px 70px 190px 70px";
-    } else if (selectedItem === "item-4") {
+    } else if (selectedObject === "item-4") {
       return "70px 70px 70px 160px";
     } else {
       return "70px 70px 70px 70px";
@@ -54,7 +54,7 @@ function Experience() {
     return (
       <button
         onClick={() => onClick(name)}
-        className={`${name} rounded-lg flex justify-between bg-stone-900 mx-4 hover:bg-gray-700 header-font`}
+        className={`${name} rounded-lg flex justify-between bg-stone-800 mx-4 md:hover:bg-stone-700 header-font`}
         style={{ overflow: "hidden" }}
       >
         <div className="text-gray-200 max-w-xs overflow-hidden text-left text-xl mt-1">
@@ -74,9 +74,9 @@ function Experience() {
           <Item key={item.name} name={item.name} header={item.header} info={item.info} onClick={handleItemClick} />
         ))}
         <div className="item-5 rounded-lg">
-          {selectedItem && (
+          {selectedObject && (
             <img
-              src={experienceInformation.find((item) => item.name === selectedItem)?.image}
+              src={experienceInformation.find((item) => item.name === selectedObject)?.image}
               alt=""
               className="rounded-md"
               style={{ objectFit: "cover", width: "100%", height: "100%" }}
@@ -89,7 +89,7 @@ function Experience() {
 
   return (
     <>
-      <div className="experience-header flex bg-transparent justify-center text-center flex-col ">
+      <div id="experience" className="experience-header flex bg-transparent justify-center text-center flex-col ">
         <div className="font-bold text-gray-200 md:text-7xl text-4xl my-36 header-font">Experience & Education</div>
         <div className="text-1xl text-gray-200"></div>
       </div>

@@ -3,18 +3,26 @@ import { BsFillMoonStarsFill, BsList } from "react-icons/bs";
 
 function Navbar() {
   const [prevScrollPos, setPrevScrollPos] = useState(0);
-  const [IsBurgerMenuOpen, setIsBurgerMenuOpen] = useState(false);
-  const [topValue, setTopValue] = useState("-100px");
-  const [navOpacity, setNavOpacity] = useState(0);
   const [navPos, setNavPos] = useState(-80);
 
   //Fade in navbar
   useEffect(() => {
     setTimeout(() => {
-      setNavOpacity(1);
       setNavPos(0);
     }, 0);
   }, []);
+
+  function GoToSection(sectionId) {
+    console.log("click");
+
+    const section = document.getElementById(sectionId);
+    console.log(sectionId);
+
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      console.log("click2");
+    }
+  }
 
   //Handle scroll behavior
   useEffect(() => {
@@ -44,18 +52,14 @@ function Navbar() {
     };
   }, [prevScrollPos]);
 
-  function ClassicNavLinks({ href, children }) {
+  function ClassicNavLinks({ children, sectionId }) {
     return (
-      <div className="  rounded-full py-2 md:hover:bg-slate-400">
-        <a
-          href={href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className=" rounded-md text-slate-200 hover:text-white mx-1"
-        >
-          {children}
-        </a>
-      </div>
+      <button
+        onClick={() => GoToSection(sectionId)}
+        className=" rounded-full py-2 md:hover:bg-slate-400 text-slate-200"
+      >
+        <a className="  mx-2">{children}</a>
+      </button>
     );
   }
 
@@ -76,15 +80,14 @@ function Navbar() {
     <>
       <div
         className="navbar-container sticky flex justify-center items-center text-gray-200
-         z-20 transition-top ease-in-out duration-300 body-text-medium"
+         z-20 transition-top ease-in-out duration-300 body-text-medium pointer-events-none"
         style={{
           top: "0",
           transform: `translateY(${navPos}px)`,
-          //transform: `translateY(0px)`,
           transition: "transform 0.3s ease-in-out",
         }}
       >
-        <div className="nav-links overflow-hidden">
+        <div className="nav-links overflow-hidden pointer-events-auto">
           <ul className="flex">
             <a
               className="arkmode-icon hover:text-slate-500 flex "
@@ -95,23 +98,15 @@ function Navbar() {
             <li
               className="navlinks-classic bg-gray-200 bg-opacity-5 rounded-full md:px-5 px-3 py-2 
               md:text-[1rem] text-[3.5vw] backdrop-blur-xl mt-5 overflow-hidden"
-              style={
-                {
-                  //top: topValue,
-                  //backgroundColor: navOpacity,
-                  //opacity: navOpacity,
-                  //transition: "opacity 0.3s ease-in-out",
-                }
-              }
             >
               <div className="flex gap-0 items-center">
-                <ClassicNavLinks href="https://www.google.se">Toolkit</ClassicNavLinks>
-                <ClassicNavLinks href="https://www.google.se">Projects</ClassicNavLinks>
+                <ClassicNavLinks sectionId="toolkit">Toolkit</ClassicNavLinks>
+                <ClassicNavLinks sectionId="projects">Projects</ClassicNavLinks>
                 <div className="darkmode-normal">
                   <DarkModeButton />
                 </div>
-                <ClassicNavLinks href="https://www.google.se">Experience</ClassicNavLinks>
-                <ClassicNavLinks href="https://www.google.se">Contact</ClassicNavLinks>
+                <ClassicNavLinks sectionId="experience">Experience</ClassicNavLinks>
+                <ClassicNavLinks sectionId="contact">Contact</ClassicNavLinks>
               </div>
             </li>
           </ul>

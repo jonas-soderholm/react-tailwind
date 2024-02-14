@@ -16,9 +16,49 @@ body {
   background-position: -0px -17px;
 }
 
+/* Add this section for the morphing background */
+@keyframes gradientMorph {
+  0% {
+    background-color: rgba(45, 79, 85, 0.8); /* Start color with some opacity */
+  }
+  50% {
+    background-color: rgba(44, 76, 62, 0.6); /* Mid color with some opacity */
+  }
+  100% {
+    background-color: rgba(48, 88, 94, 0.793); /* End color with some opacity */
+  }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  animation: gradientMorph 15s infinite alternate;
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -2;
+  background: linear-gradient(45deg, #ff0000, #0000ff); /* Another gradient background */
+  opacity: 0.2; /* Adjust opacity as needed */
+}
+
 @font-face {
   font-family: "Acorn";
   src: url("assets/fonts/Acorn-Medium.ttf") format("woff2");
+}
+
+.header-text {
+  color: #aee3db;
 }
 
 .body-text-medium {

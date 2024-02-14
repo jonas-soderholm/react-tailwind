@@ -25,7 +25,7 @@ function AddStar({ initialSize, positionX, positionY, scaleUpTime, scaleDownTime
         left: positionX,
         width: `${size}vw`,
         height: `${size}vw`,
-        transition: "width 1s, height 2s", // Apply the transition effect
+        transition: "width 1s, height 2s",
       }}
     >
       <img src="./ai-star.svg" alt="" />
@@ -63,8 +63,8 @@ function Hero() {
       setheaderPosition(0);
       setTimeout(() => {
         setUnderHeaderOpacity(1);
-      }, 700); // Adjusted timing for opacity change
-    }, 0); // Adjusted timing for initial header animation
+      }, 700);
+    }, 0);
 
     return () => clearTimeout(animationTimeout);
   }, []);
@@ -83,7 +83,7 @@ function Hero() {
           <div className="text-center p-5 py-5 flex-1 ">
             <div className="mainHeader pt-4 overflow-hidden">
               <h2
-                className="header-text font-bold py-0 text-gray-200 mb-6 md:text-[7vw] text-5xl header-font"
+                className="header-text font-bold py-0 mb-6 md:text-[7vw] text-5xl header-font"
                 style={{
                   transition: "transform 0.6s ease-in-out",
                   transform: `translateY(+${headerPosition}px)`,
@@ -99,7 +99,7 @@ function Hero() {
                 transition: "opacity 0.5s ease-in-out",
               }}
             >
-              <h3 className="font-Heebo font-bold text-2xl py-0 text-green-500 md:text-3xl body-text-medium">
+              <h3 className="font-Heebo font-bold text-2xl py-0 text-gray-200 md:text-3xl body-text-medium">
                 An Agile Developer and Designer.
               </h3>
             </div>
@@ -136,8 +136,8 @@ function Hero() {
               />
               <AddStar
                 initialSize={starSizer - 1}
-                positionX="45%"
-                positionY="160%"
+                positionX="46%"
+                positionY="145%"
                 scaleUpTime={1500}
                 scaleDownTime={2000}
                 remainVisible={true}
@@ -160,15 +160,15 @@ function Hero() {
                 positionX="70%"
                 positionY="-20%"
                 scaleUpTime={700}
-                scaleDownTime={1200}
+                scaleDownTime={1050}
                 remainVisible={false}
                 id="star"
               />
               <AddStar
                 initialSize={starSizer - 2}
-                positionX="47%"
+                positionX="46%"
                 positionY="110%"
-                scaleUpTime={1000}
+                scaleUpTime={800}
                 scaleDownTime={2000}
                 remainVisible={true}
                 id="starRotator"
