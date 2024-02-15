@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 body {
-  background-color: #0a77d5;
+  background-color: #1a67aa;
 }
 
 /* Fonts */
@@ -40,7 +40,7 @@ body {
 }
 
 .bg-dark {
-  background-color: #0a77d5;
+  background-color: #1a67aa;
 }
 
 .nav-bar-light {
