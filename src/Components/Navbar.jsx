@@ -66,6 +66,7 @@ function Navbar() {
 
     document.body.classList.remove("lighter");
     document.body.classList.add("darker");
+    document.body.classList.add("loaded");
   }, []);
 
   function DarkModeToggle() {

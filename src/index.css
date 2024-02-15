@@ -11,6 +11,10 @@ body {
   background-attachment: fixed;
   font-family: "Heebo", sans-serif;
   background-position: -0px -17px;
+  background-color: #154d56;
+}
+
+body.loaded {
   transition: background-color 0.3s ease-in-out;
 }
 

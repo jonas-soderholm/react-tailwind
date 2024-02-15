@@ -63,7 +63,7 @@ function Hero() {
       setheaderPosition(0);
       setTimeout(() => {
         setUnderHeaderOpacity(1);
-      }, 700);
+      }, 800);
     }, 0);
 
     return () => clearTimeout(animationTimeout);
@@ -100,7 +100,7 @@ function Hero() {
               }}
             >
               <h3 className="font-Heebo dark:text-gray-200 text-slate-900 font-bold text-2xl py-0 md:text-3xl body-text-medium">
-                An Agile Developer and Designer.
+                Focused on creating smooth, easy-to-use solutions. I code to solve problems and design for clarity.
               </h3>
             </div>
           </div>
