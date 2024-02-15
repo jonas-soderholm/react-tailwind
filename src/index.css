@@ -5,51 +5,10 @@
 @tailwind utilities;
 
 body {
-  /* background-image: url("/grid.png"); */
-  background-size: 150%;
-  background-repeat: repeat;
-  background-attachment: fixed;
-  font-family: "Heebo", sans-serif;
-  background-position: -0px -17px;
-  background-color: #154d56;
+  background-color: #0a77d5;
 }
 
-.text-dark {
-  color: #cccccc;
-}
-
-.text-light {
-  color: #0f172a;
-}
-
-.text-light,
-.text-dark {
-  transition: color 0.5s ease-in-out;
-}
-
-.bg-light {
-  background-color: #cccccc;
-}
-
-.bg-dark {
-  background-color: #154d56;
-}
-
-.nav-bar-light {
-  background-color: rgba(30, 32, 33, 0.306);
-}
-
-.nav-bar-dark {
-  background-color: rgba(133, 138, 143, 0.284);
-}
-
-.bg-dark,
-.bg-light,
-.nav-bar-light,
-.nav-bar-dark {
-  transition: background-color 0.5s ease-in-out;
-}
-
+/* Fonts */
 @font-face {
   font-family: "Acorn";
   src: url("assets/fonts/Acorn-Medium.ttf") format("woff2");
@@ -67,8 +26,40 @@ body {
   letter-spacing: 0.1em; /* Adjust as needed */
 }
 
-.toolkit-content {
-  font-size: 15px;
+/* Dark and light mode */
+.text-dark {
+  color: #cccccc;
+}
+
+.text-light {
+  color: #0f172a;
+}
+
+.bg-light {
+  background-color: #cccccc;
+}
+
+.bg-dark {
+  background-color: #0a77d5;
+}
+
+.nav-bar-light {
+  background-color: rgba(30, 32, 33, 0.306);
+}
+
+.nav-bar-dark {
+  background-color: rgba(220, 224, 227, 0.284);
+}
+
+.text-light,
+.text-dark,
+.bg-light,
+.bg-dark,
+.nav-bar-light,
+.nav-bar-dark {
+  transition:
+    background-color 0.5s ease-in-out,
+    color 0.5s ease-in-out;
 }
 
 @media (max-width: 768px) {
@@ -79,25 +70,15 @@ body {
     align-items: center;
   }
 
-  .repo-btn,
-  .resume-btn {
-    display: none;
-  }
-
   .toggle-buttons {
     visibility: hidden;
   }
-
-  .gradient-design {
-    display: none;
-  }
 }
 
+/* Experience section */
 .experience-container {
   display: grid;
-
   grid-template-columns: 0.2fr 0.2fr 0.2fr 0.6fr;
-
   gap: 5px;
   max-width: 1350px;
   margin-left: auto;

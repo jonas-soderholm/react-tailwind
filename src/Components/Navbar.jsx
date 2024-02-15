@@ -3,7 +3,6 @@ import { BsFillMoonStarsFill, BsSunFill, BsList } from "react-icons/bs";
 import { useDarkMode } from "./DarkModeContext";
 
 function Navbar() {
-  const [prevScrollPos, setPrevScrollPos] = useState(0);
   const [navPos, setNavPos] = useState(-80);
   const { darkMode, toggleDarkMode } = useDarkMode();
 
@@ -19,44 +18,12 @@ function Navbar() {
   }
 
   function GoToSection(sectionId) {
-    console.log("click");
-
     const section = document.getElementById(sectionId);
-    console.log(sectionId);
 
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      console.log("click2");
     }
   }
-
-  //Handle scroll behavior
-  useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollPos = window.scrollY;
-      if (currentScrollPos > prevScrollPos) {
-        // Scroll down, hide navbar
-        // setTopValue("-100px");
-        //setNavOpacity("rgba(0, 0, 0, 0.5)");
-      } else {
-        // Scroll upp, show navbar
-        //setTopValue("0px");
-      }
-
-      // If navbar at top, hide navbar background
-      if (window.scrollY === 0) {
-        setNavOpacity("rgba(0, 0, 0, 0)");
-      }
-
-      setPrevScrollPos(currentScrollPos);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [prevScrollPos]);
 
   function ClassicNavLinks({ children, sectionId }) {
     return (
@@ -65,7 +32,7 @@ function Navbar() {
       </button>
     );
   }
-  //{${darkMode ? "text-dark" : "text-light"}}
+
   //Fade in navbar
   useEffect(() => {
     setTimeout(() => {

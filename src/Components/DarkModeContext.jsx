@@ -18,9 +18,6 @@ export const DarkModeProvider = ({ children }) => {
       document.body.classList.remove("bg-light");
       document.body.classList.add("bg-dark");
     }
-
-    console.log("lol");
-    console.log(darkMode);
   };
 
   return <DarkModeContext.Provider value={{ darkMode, toggleDarkMode }}>{children}</DarkModeContext.Provider>;

@@ -26,12 +26,6 @@ const toolsData2 = [
   { logoSrc: "/fl-logo.png", name: "FL Studio" },
 ];
 
-const backgroundStyle = {
-  backgroundImage: `url(${backgroundImage})`,
-  backgroundSize: "cover",
-  backgroundPosition: "center",
-};
-
 function Toolkit() {
   const { darkMode, toggleDarkMode } = useDarkMode();
 

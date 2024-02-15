@@ -39,8 +39,79 @@ function Hero() {
   const [underHeaderOpacity, setUnderHeaderOpacity] = useState(0);
   const isPhone = window.innerWidth < 768;
   const starSizer = isPhone ? 10 : 5;
+  console.log(starSizer);
   let rotatingStar = document.getElementById("starRotator");
   const { darkMode } = useDarkMode();
+
+  const starConfigurations = {
+    phone: [
+      {
+        initialSize: starSizer,
+        positionX: "40%",
+        positionY: "-20%",
+        scaleUpTime: 500,
+        scaleDownTime: 900,
+        remainVisible: false,
+        id: "phoneStar1",
+      },
+      {
+        initialSize: starSizer + 5,
+        positionX: "70%",
+        positionY: "-40%",
+        scaleUpTime: 700,
+        scaleDownTime: 1200,
+        remainVisible: false,
+        id: "phoneStar2",
+      },
+      {
+        initialSize: starSizer + 2,
+        positionX: "20%",
+        positionY: "110%",
+        scaleUpTime: 1000,
+        scaleDownTime: 1500,
+        remainVisible: false,
+        id: "phoneStar3",
+      },
+      {
+        initialSize: starSizer - 1,
+        positionX: "46%",
+        positionY: "122%",
+        scaleUpTime: 1500,
+        scaleDownTime: 2000,
+        remainVisible: true,
+        id: "starRotator",
+      },
+    ],
+    nonPhone: [
+      {
+        initialSize: starSizer - 1,
+        positionX: "80%",
+        positionY: "20%",
+        scaleUpTime: 500,
+        scaleDownTime: 900,
+        remainVisible: false,
+        id: "nonPhoneStar1",
+      },
+      {
+        initialSize: starSizer + 3,
+        positionX: "70%",
+        positionY: "-20%",
+        scaleUpTime: 700,
+        scaleDownTime: 1000,
+        remainVisible: false,
+        id: "nonPhoneStar2",
+      },
+      {
+        initialSize: starSizer - 2,
+        positionX: "48%",
+        positionY: "110%",
+        scaleUpTime: 800,
+        scaleDownTime: 2000,
+        remainVisible: true,
+        id: "starRotator",
+      },
+    ],
+  };
 
   // Scroll rotate visual star
   useEffect(() => {
@@ -109,76 +180,9 @@ function Hero() {
             </div>
           </div>
           {/* // Staranimations */}
-          {isPhone ? (
-            <>
-              <AddStar
-                initialSize={starSizer}
-                positionX="40%"
-                positionY="-20%"
-                scaleUpTime={500}
-                scaleDownTime={900}
-                remainVisible={false}
-                id="star"
-              />
-              <AddStar
-                initialSize={starSizer + 5}
-                positionX="70%"
-                positionY="-40%"
-                scaleUpTime={700}
-                scaleDownTime={1200}
-                remainVisible={false}
-                id="star"
-              />
-              <AddStar
-                initialSize={starSizer + 2}
-                positionX="20%"
-                positionY="110%"
-                scaleUpTime={1000}
-                scaleDownTime={1500}
-                remainVisible={false}
-                id="star"
-              />
-              <AddStar
-                initialSize={starSizer - 1}
-                positionX="46%"
-                positionY="122%"
-                scaleUpTime={1500}
-                scaleDownTime={2000}
-                remainVisible={true}
-                id="starRotator"
-              />
-            </>
-          ) : (
-            <>
-              <AddStar
-                initialSize={starSizer - 1}
-                positionX="80%"
-                positionY="20%"
-                scaleUpTime={500}
-                scaleDownTime={900}
-                remainVisible={false}
-                id="star"
-              />
-              <AddStar
-                initialSize={starSizer + 3}
-                positionX="70%"
-                positionY="-20%"
-                scaleUpTime={700}
-                scaleDownTime={1050}
-                remainVisible={false}
-                id="star"
-              />
-              <AddStar
-                initialSize={starSizer - 2}
-                positionX="48%"
-                positionY="110%"
-                scaleUpTime={800}
-                scaleDownTime={2000}
-                remainVisible={true}
-                id="starRotator"
-              />
-            </>
-          )}
+          {isPhone
+            ? starConfigurations.phone.map((config) => <AddStar key={config.id} {...config} />)
+            : starConfigurations.nonPhone.map((config) => <AddStar key={config.id} {...config} />)}
         </div>
       </div>
     </div>
