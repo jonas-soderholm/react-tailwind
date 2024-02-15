@@ -14,8 +14,40 @@ body {
   background-color: #154d56;
 }
 
-body.loaded {
-  transition: background-color 0.3s ease-in-out;
+.text-dark {
+  color: #cccccc;
+}
+
+.text-light {
+  color: #0f172a;
+}
+
+.text-light,
+.text-dark {
+  transition: color 0.5s ease-in-out;
+}
+
+.bg-light {
+  background-color: #cccccc;
+}
+
+.bg-dark {
+  background-color: #154d56;
+}
+
+.nav-bar-light {
+  background-color: rgba(30, 32, 33, 0.306);
+}
+
+.nav-bar-dark {
+  background-color: rgba(133, 138, 143, 0.284);
+}
+
+.bg-dark,
+.bg-light,
+.nav-bar-light,
+.nav-bar-dark {
+  transition: background-color 0.5s ease-in-out;
 }
 
 @font-face {
@@ -23,32 +55,16 @@ body.loaded {
   src: url("assets/fonts/Acorn-Medium.ttf") format("woff2");
 }
 
-/* :root {
-  --text-color: #154d56;
-    /* background-color: var(--text-color);
-} 
-*/
-
-.darker {
-  background-color: #154d56;
-}
-
-.lighter {
-  background-color: rgb(185, 185, 185);
-}
-
 .body-text-medium {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
-  transition: color 0.6s ease-in-out;
 }
 
 .header-font {
   font-family: "Acorn", sans-serif;
   letter-spacing: 0.1em; /* Adjust as needed */
-  transition: color 0.6s ease-in-out;
 }
 
 .toolkit-content {

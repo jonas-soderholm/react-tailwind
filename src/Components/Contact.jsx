@@ -1,6 +1,10 @@
+import { useDarkMode } from "./DarkModeContext";
+
 function Contact() {
+  const { darkMode } = useDarkMode();
+
   return (
-    <div id="contact" className="contact-container dark:text-gray-200 text-slate-900 py-36">
+    <div id="contact" className={`${darkMode ? "text-dark" : "text-light"} contact-container py-36 `}>
       <h1 className="contact-header flex flex-col items-center font-bold mb-2 md:text-7xl text-4xl header-font">
         Let's talk! :)
       </h1>

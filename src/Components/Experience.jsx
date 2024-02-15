@@ -1,7 +1,9 @@
 import { useState, useEffect } from "react";
+import { useDarkMode } from "./DarkModeContext";
 
 function Experience() {
   const [selectedObject, setSelectedObject] = useState("item-1");
+  const { darkMode } = useDarkMode();
 
   // Define a function to handle item clicks
   const handleItemClick = (itemName) => {
@@ -89,10 +91,11 @@ function Experience() {
 
   return (
     <>
-      <div id="experience" className="experience-header flex bg-transparent justify-center text-center flex-col ">
-        <div className="font-bold dark:text-gray-200 text-slate-900 md:text-7xl text-4xl my-36 header-font">
-          Experience & Education
-        </div>
+      <div
+        id="experience"
+        className={`${darkMode ? "text-dark" : "text-light"} experience-header flex bg-transparent justify-center text-center flex-col `}
+      >
+        <div className="font-bold md:text-7xl text-4xl my-36 header-font">Experience & Education</div>
       </div>
       <div
         className="experience-container bg-transparent"

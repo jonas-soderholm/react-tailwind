@@ -1,5 +1,6 @@
 import React from "react";
 import backgroundImage from "/grid.png";
+import { useDarkMode } from "./DarkModeContext";
 
 const toolsData1 = [
   { logoSrc: "/react-logo.png", name: "React" },
@@ -32,12 +33,15 @@ const backgroundStyle = {
 };
 
 function Toolkit() {
+  const { darkMode, toggleDarkMode } = useDarkMode();
+
   return (
     <>
-      <div id="toolkit" className="toolkit-header flex bg-transparent justify-center text-center">
-        <div className="font-bold dark:text-gray-200 text-slate-900 items-center md:text-7xl text-4xl my-36 header-font">
-          Toolkit
-        </div>
+      <div
+        id="toolkit"
+        className={`toolkit-header ${darkMode ? "text-dark" : "text-light"}  flex bg-transparent justify-center text-center`}
+      >
+        <div className="font-bold items-center md:text-7xl text-4xl my-36 header-font">Toolkit</div>
       </div>
       <div className="toolkit-content1 md:flex flex-wrap flex justify-center text-center gap-4 gap ml-4 mr-4 body-text-medium">
         <div className="font-bold bg-stone-800 text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-2xl justify-center rounded-xl shadow-2xl">

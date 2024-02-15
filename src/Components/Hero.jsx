@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useDarkMode } from "./DarkModeContext";
 
 function AddStar({ initialSize, positionX, positionY, scaleUpTime, scaleDownTime, remainVisible, id }) {
   const [size, setSize] = useState(0);
@@ -39,6 +40,7 @@ function Hero() {
   const isPhone = window.innerWidth < 768;
   const starSizer = isPhone ? 10 : 5;
   let rotatingStar = document.getElementById("starRotator");
+  const { darkMode } = useDarkMode();
 
   // Scroll rotate visual star
   useEffect(() => {
@@ -77,15 +79,17 @@ function Hero() {
         transform: `translateY(-${0}px)`,
       }}
     >
-      <div className="hero-content md:mx-[4rem] text-white rounded-xl h-[85vh] flex flex-col justify-center overflow-hidden">
+      <div
+        className={`${darkMode ? "text-dark" : "text-light"} hero-content md:mx-[4rem] rounded-xl h-[85vh] flex flex-col justify-center overflow-hidden `}
+      >
         <div className="w-full overflow-x-hidden"></div>
         <div className="p-0 flex justify-between gap-2 relative">
           <div className="text-center p-5 py-5 flex-1 ">
             <div className="mainHeader header-font pt-4 overflow-hidden">
               <h2
-                className="dark:text-gray-200 text-slate-900 font-bold py-0 mb-6 md:text-[7vw] text-5xl header-font"
+                className=" font-bold py-0 mb-6 md:text-[7vw] text-5xl header-font"
                 style={{
-                  transition: "transform 0.6s ease-in-out, color 0.6s ease-in-out",
+                  transition: "transform 0.6s ease-in-out",
                   transform: `translateY(+${headerPosition}px)`,
                 }}
               >
@@ -99,7 +103,7 @@ function Hero() {
                 transition: "opacity 0.5s ease-in-out",
               }}
             >
-              <h3 className="font-Heebo max-w-4xl m-auto dark:text-gray-200 text-slate-900 font-bold text-lg py-0 md:text-2xl body-text-medium">
+              <h3 className="font-Heebo  max-w-4xl m-auto font-bold text-lg py-0 md:text-2xl body-text-medium">
                 Focused on creating smooth, easy-to-use solutions. I code to solve problems and design for clarity.
               </h3>
             </div>

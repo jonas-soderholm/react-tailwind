@@ -1,7 +1,9 @@
 import React, { useState, useRef, useEffect } from "react";
+import { useDarkMode } from "./DarkModeContext";
 
 function Projects() {
   const containerRef = useRef(null);
+  const { darkMode, toggleDarkMode } = useDarkMode();
 
   const cards = [
     {
@@ -87,7 +89,7 @@ function Projects() {
     return (
       <button
         className={`toggle-buttons flex scroll-button bg-gray-100 rounded-full h-14 w-14 
-          hover:bg-gray-300 text-4xl items-center justify-center mx-8 
+          hover:bg-gray-400 text-4xl items-center justify-center mx-8 
           
           ${position === "right" ? "" : "rotate-180"}
            `}
@@ -101,7 +103,9 @@ function Projects() {
   return (
     <>
       <div id="projects"></div>
-      <div className="project-header dark:text-gray-200 text-slate-900 flex justify-center text-center flex-col md:text-7xl text-4xl mt-36 mb-10">
+      <div
+        className={`toolkit-header ${darkMode ? "text-dark" : "text-light"} project-header  flex justify-center text-center flex-col md:text-7xl text-4xl mt-36 mb-10`}
+      >
         <div className="font-bold header-font">Projects</div>
         <div className="text-2xl body-text-medium">Have a look at my latest work!</div>
       </div>
@@ -115,15 +119,6 @@ function Projects() {
         style={{ maxWidth: "1350px" }}
         ref={containerRef}
       >
-        {/* <div
-          className="gradient-design hidden xl:flex absolute bg-white pointer-events-none"
-          style={{
-            height: "480px",
-            width: "300px",
-            transform: "translateY(10px)" + "translateX(810px)",
-            background: "linear-gradient(to right, rgba(21, 45, 84, 0), rgba(21, 45, 84, 1))",
-          }}
-        ></div> */}
         <div
           className="individual-cards flex m-5 gap-5 ml-4 mr-4 md:w-[2200px] w-[1000px]"
           style={{
