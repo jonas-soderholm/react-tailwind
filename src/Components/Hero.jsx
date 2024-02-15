@@ -99,7 +99,7 @@ function Hero() {
                 transition: "opacity 0.5s ease-in-out",
               }}
             >
-              <h3 className="font-Heebo dark:text-gray-200 text-slate-900 font-bold text-2xl py-0 md:text-3xl body-text-medium">
+              <h3 className="font-Heebo max-w-4xl m-auto dark:text-gray-200 text-slate-900 font-bold text-lg py-0 md:text-2xl body-text-medium">
                 Focused on creating smooth, easy-to-use solutions. I code to solve problems and design for clarity.
               </h3>
             </div>
@@ -137,7 +137,7 @@ function Hero() {
               <AddStar
                 initialSize={starSizer - 1}
                 positionX="46%"
-                positionY="145%"
+                positionY="122%"
                 scaleUpTime={1500}
                 scaleDownTime={2000}
                 remainVisible={true}
