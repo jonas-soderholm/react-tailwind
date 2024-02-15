@@ -6,13 +6,11 @@ import Toolkit from "./Components/Toolkit.jsx";
 import Projects from "./Components/Projects.jsx";
 import Experience from "./Components/Experience.jsx";
 import Contact from "./Components/Contact.jsx";
-import Test from "./Components/Test.jsx";
 
 import "./index.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    {/* <Test /> */}
     <Navbar />
     <Hero />
     <Toolkit />

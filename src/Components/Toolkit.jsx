@@ -35,10 +35,12 @@ function Toolkit() {
   return (
     <>
       <div id="toolkit" className="toolkit-header flex bg-transparent justify-center text-center">
-        <div className="font-bold text-gray-200 items-center md:text-7xl text-4xl my-36 header-font">Toolkit</div>
+        <div className="font-bold dark:text-gray-200 text-slate-900 items-center md:text-7xl text-4xl my-36 header-font">
+          Toolkit
+        </div>
       </div>
       <div className="toolkit-content1 md:flex flex-wrap flex justify-center text-center gap-4 gap ml-4 mr-4 body-text-medium">
-        <div className="font-bold bg-stone-800 text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-xl justify-center rounded-xl shadow-2xl">
+        <div className="font-bold bg-stone-800 text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-2xl justify-center rounded-xl shadow-2xl">
           {toolsData1.map((tool, index) => (
             <div key={tool.name} className="font-bold rounded-xl border px-2 py-1 flex items-center">
               <div className="p-1">
@@ -48,7 +50,7 @@ function Toolkit() {
             </div>
           ))}
         </div>
-        <div className="toolkit-content2 bg-stone-800 font-bold md:mt-0 mt-4 text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-xl justify-center rounded-xl shadow-2xl">
+        <div className="toolkit-content2 bg-stone-800 font-bold md:mt-0 mt-4 text-gray-200 p-5 flex flex-wrap gap-5 items-center max-w-2xl justify-center rounded-xl shadow-2xl">
           {toolsData2.map((tool, index) => (
             <div key={tool.name} className="font-bold rounded-xl border px-2 py-1 flex items-center justify-center">
               <div className="p-1 flex items-center">

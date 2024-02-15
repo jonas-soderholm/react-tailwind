@@ -101,9 +101,9 @@ function Projects() {
   return (
     <>
       <div id="projects"></div>
-      <div className="project-header flex justify-center text-center flex-col md:text-7xl text-4xl mt-36 mb-10">
-        <div className="font-bold text-gray-200 header-font">Projects</div>
-        <div className="text-gray-200 text-2xl body-text-medium">Have a look at my latest work!</div>
+      <div className="project-header dark:text-gray-200 text-slate-900 flex justify-center text-center flex-col md:text-7xl text-4xl mt-36 mb-10">
+        <div className="font-bold header-font">Projects</div>
+        <div className="text-2xl body-text-medium">Have a look at my latest work!</div>
       </div>
       <div className="toggle-buttons flex justify-center mt-4 mx-4">
         <ScrollButton position="left" onClick={() => toggleClick("left", 200)} />
@@ -112,10 +112,10 @@ function Projects() {
 
       <div
         className="card-container overflow-scroll mx-auto mt-8 scrollbar-hide md:w-300 body-text-medium"
-        style={{ maxWidth: "1100px" }}
+        style={{ maxWidth: "1350px" }}
         ref={containerRef}
       >
-        <div
+        {/* <div
           className="gradient-design hidden xl:flex absolute bg-white pointer-events-none"
           style={{
             height: "480px",
@@ -123,9 +123,9 @@ function Projects() {
             transform: "translateY(10px)" + "translateX(810px)",
             background: "linear-gradient(to right, rgba(21, 45, 84, 0), rgba(21, 45, 84, 1))",
           }}
-        ></div>
+        ></div> */}
         <div
-          className="individual-cards flex m-5 gap-5 ml-4 mr-4 md:w-[1200] w-[1800] "
+          className="individual-cards flex m-5 gap-5 ml-4 mr-4 md:w-[2200px] w-[1000px]"
           style={{
             height: "auto",
           }}

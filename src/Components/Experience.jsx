@@ -90,8 +90,9 @@ function Experience() {
   return (
     <>
       <div id="experience" className="experience-header flex bg-transparent justify-center text-center flex-col ">
-        <div className="font-bold text-gray-200 md:text-7xl text-4xl my-36 header-font">Experience & Education</div>
-        <div className="text-1xl text-gray-200"></div>
+        <div className="font-bold dark:text-gray-200 text-slate-900 md:text-7xl text-4xl my-36 header-font">
+          Experience & Education
+        </div>
       </div>
       <div
         className="experience-container bg-transparent"

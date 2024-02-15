@@ -19,7 +19,7 @@ function AddStar({ initialSize, positionX, positionY, scaleUpTime, scaleDownTime
   return (
     <div
       id={id}
-      className="stars absolute"
+      className="stars absolute "
       style={{
         top: positionY,
         left: positionX,
@@ -71,21 +71,21 @@ function Hero() {
 
   return (
     <div
-      className="main-container bg-transparent"
+      className="main-container"
       style={{
         transition: "transform 0.3s ease-in-out",
         transform: `translateY(-${0}px)`,
       }}
     >
-      <div className="hero-content md:mx-[4rem]  text-white rounded-xl h-[85vh] flex flex-col justify-center overflow-hidden">
+      <div className="hero-content md:mx-[4rem] text-white rounded-xl h-[85vh] flex flex-col justify-center overflow-hidden">
         <div className="w-full overflow-x-hidden"></div>
         <div className="p-0 flex justify-between gap-2 relative">
           <div className="text-center p-5 py-5 flex-1 ">
-            <div className="mainHeader pt-4 overflow-hidden">
+            <div className="mainHeader header-font pt-4 overflow-hidden">
               <h2
-                className="header-text font-bold py-0 mb-6 md:text-[7vw] text-5xl header-font"
+                className="dark:text-gray-200 text-slate-900 font-bold py-0 mb-6 md:text-[7vw] text-5xl header-font"
                 style={{
-                  transition: "transform 0.6s ease-in-out",
+                  transition: "transform 0.6s ease-in-out, color 0.6s ease-in-out",
                   transform: `translateY(+${headerPosition}px)`,
                 }}
               >
@@ -99,7 +99,7 @@ function Hero() {
                 transition: "opacity 0.5s ease-in-out",
               }}
             >
-              <h3 className="font-Heebo font-bold text-2xl py-0 text-gray-200 md:text-3xl body-text-medium">
+              <h3 className="font-Heebo dark:text-gray-200 text-slate-900 font-bold text-2xl py-0 md:text-3xl body-text-medium">
                 An Agile Developer and Designer.
               </h3>
             </div>
@@ -166,7 +166,7 @@ function Hero() {
               />
               <AddStar
                 initialSize={starSizer - 2}
-                positionX="46%"
+                positionX="48%"
                 positionY="110%"
                 scaleUpTime={800}
                 scaleDownTime={2000}
