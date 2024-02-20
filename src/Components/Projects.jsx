@@ -7,33 +7,40 @@ function Projects() {
 
   const cards = [
     {
-      title: "Three.js, 3D scroller23",
-      description: "My three.js project",
-      language: ["zz", "sss"],
-      image: "/phone-app.png",
+      title: "TrashTagger",
+      description:
+        // "Empower communities to report and manage trash efficiently. Tag trash locations for swift collection by responsible waste management authorities.",
+        "TrashTagger",
+      language: ["React", "Node.js", "Express", "MySql"],
+      image: "/trashtagger2.png",
+      url: "https://trashyu.netlify.app",
     },
     {
       title: "Three.js2, 3D scroller2",
       description: "My three.js project2 asdasdasd asd asd as das da d",
       language: ["zz", "sss"],
       image: "/phone-app.png",
+      url: "https://trashyu.netlify.app",
     },
     {
       title: "Three.js3, 3D scroller3",
       description: "My three.js project3",
       language: ["zz", "sss"],
       image: "/phone-app.png",
+      url: "https://trashyu.netlify.app",
     },
     {
       title: "Three.js3, 3D scroller3",
       description: "My three.js project3",
       language: ["zz"],
       image: "/phone-app.png",
+      url: "https://trashyu.netlify.app",
     },
   ];
 
-  const handleCardClick = (title) => {
-    console.log(`Card clicked: ${title}`);
+  const handleCardClick = (url) => {
+    // Open the URL in a new tab
+    window.open(url, "_blank");
   };
 
   function RenderCards() {
@@ -41,14 +48,14 @@ function Projects() {
       <div
         href:key={properties.title}
         className="card bg-stone-800 rounded-3xl  hover:cursor-pointer hover:bg-stone-700"
-        onClick={() => handleCardClick(properties.title)}
+        onClick={() => handleCardClick(properties.url)}
       >
         <img src={properties.image} alt="" className="rounded-t-2xl " />
         <div className=" p-3">
           <h2 className="text-xl font-semibold text-gray-200 header-font">{properties.title}</h2>
           <div className="flex gap-2">
             {properties.language.map((language, index) => (
-              <button key={index} className="bg-blue-500 text-gray-200 py-0 px-1 rounded-full mt-1 text-l ">
+              <button key={index} className="bg-blue-500 text-gray-200 py-1 px-2 rounded-full mt-1 text-l ">
                 {language}
               </button>
             ))}
@@ -104,7 +111,9 @@ function Projects() {
     <>
       <div id="projects"></div>
       <div
-        className={`toolkit-header ${darkMode ? "text-dark" : "text-light"} project-header  flex justify-center text-center flex-col md:text-7xl text-4xl mt-36 mb-10`}
+        className={`toolkit-header ${
+          darkMode ? "text-dark" : "text-light"
+        } project-header  flex justify-center text-center flex-col md:text-7xl text-4xl mt-36 mb-10`}
       >
         <div className="font-bold header-font">Projects</div>
         <div className="text-2xl body-text-medium">Have a look at my latest work!</div>
