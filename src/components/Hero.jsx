@@ -144,14 +144,16 @@ function Hero() {
 
   return (
     <div
-      className="main-container"
+      className="main-container pointer"
       style={{
         transition: "transform 0.3s ease-in-out",
         transform: `translateY(-${0}px)`,
       }}
     >
       <div
-        className={`${darkMode ? "text-dark" : "text-light"} hero-content md:mx-[4rem] rounded-xl h-[85vh] flex flex-col justify-center overflow-hidden `}
+        className={`${
+          darkMode ? "text-dark" : "text-light"
+        } hero-content md:mx-[4rem] rounded-xl h-[85vh] flex flex-col justify-center overflow-hidden `}
       >
         <div className="w-full overflow-x-hidden"></div>
         <div className="p-0 flex justify-between gap-2 relative">

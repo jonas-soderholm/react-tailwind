@@ -1,11 +1,12 @@
 import React from "react";
-import backgroundImage from "/grid.png";
 import { useDarkMode } from "./DarkModeContext";
 
 const toolsData1 = [
   { logoSrc: "/react-logo.png", name: "React" },
-  { logoSrc: "/threejs-logo.png", name: "Three.js" },
   { logoSrc: "/js-logo.png", name: "JavaScript" },
+  { logoSrc: "/node-logo.png", name: "Node.js" },
+  { logoSrc: "/express-logo.png", name: "Express" },
+  { logoSrc: "/threejs-logo.png", name: "Three.js" },
   { logoSrc: "/tailwind-logo.png", name: "Tailwind" },
   { logoSrc: "/css-logo.png", name: "CSS" },
   { logoSrc: "/html-logo.png", name: "HTML" },
@@ -33,7 +34,9 @@ function Toolkit() {
     <>
       <div
         id="toolkit"
-        className={`toolkit-header ${darkMode ? "text-dark" : "text-light"}  flex bg-transparent justify-center text-center`}
+        className={`toolkit-header ${
+          darkMode ? "text-dark" : "text-light"
+        }  flex bg-transparent justify-center text-center`}
       >
         <div className="font-bold items-center md:text-7xl text-4xl my-36 header-font">Toolkit</div>
       </div>
