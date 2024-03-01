@@ -12,15 +12,15 @@ function Projects() {
         // "Empower communities to report and manage trash efficiently. Tag trash locations for swift collection by responsible waste management authorities.",
         "TrashTagger",
       language: ["React", "Node.js", "Express", "MySql"],
-      image: "/trashtagger2.png",
+      image: "/trash-tagger.png",
       url: "https://trashyu.netlify.app",
     },
     {
-      title: "Three.js2, 3D scroller2",
-      description: "My three.js project2 asdasdasd asd asd as das da d",
-      language: ["zz", "sss"],
-      image: "/phone-app.png",
-      url: "https://trashyu.netlify.app",
+      title: "450 Showroom",
+      description: "3D Showroom",
+      language: ["Three.js", "React Fiber"],
+      image: "/450.png",
+      url: "https://jonas-450.netlify.app/",
     },
     {
       title: "Three.js3, 3D scroller3",
@@ -45,22 +45,31 @@ function Projects() {
 
   function RenderCards() {
     return cards.map((properties) => (
-      <div
-        href:key={properties.title}
-        className="card bg-stone-800 rounded-3xl  hover:cursor-pointer hover:bg-stone-700"
-        onClick={() => handleCardClick(properties.url)}
-      >
-        <img src={properties.image} alt="" className="rounded-t-2xl " />
-        <div className=" p-3">
-          <h2 className="text-xl font-semibold text-gray-200 header-font">{properties.title}</h2>
-          <div className="flex gap-2">
+      <div>
+        <div
+          key={properties.title}
+          className="card bg-[#1b1a1a] rounded-3xl md:w-[30rem] w-[18rem] hover:cursor-pointer hover:bg-stone-700 flex flex-col"
+          onClick={() => handleCardClick(properties.url)}
+        >
+          <img
+            src={properties.image}
+            alt=""
+            className="rounded-2xl md:w-[30rem] md:h-[20rem] w-[25rem] h-[12rem] object-cover"
+          />
+        </div>
+        <div className="p-3 flex flex-col flex-grow">
+          <h2 className="md:text-3xl text-xl font-semibold text-gray-200 header-font">{properties.title}</h2>
+          <p className="md:text-xl text-sm text-gray-200 flex-grow">{properties.description}</p>
+          <div className="flex flex-wrap gap-2 mb-2">
             {properties.language.map((language, index) => (
-              <button key={index} className="bg-blue-500 text-gray-200 py-1 px-2 rounded-full mt-1 text-l ">
+              <button
+                key={index}
+                className="bg-stone-800 text-gray-200 mt-2 py-1 px-2 rounded-full md:text-sm text-[8px]"
+              >
                 {language}
               </button>
             ))}
           </div>
-          <p className="text-l mt-2 text-gray-200 ">{properties.description}</p>
         </div>
       </div>
     ));
