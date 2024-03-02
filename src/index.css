@@ -16,7 +16,7 @@ body {
 
 .body-text-medium {
   font-family: "Montserrat", sans-serif;
-  font-optical-sizing: auto;
+  /* font-optical-sizing: auto; */
   font-weight: 500;
   font-style: normal;
 }
@@ -24,6 +24,10 @@ body {
 .header-font {
   font-family: "Acorn", sans-serif;
   letter-spacing: 0.1em; /* Adjust as needed */
+}
+
+.montserrat-font {
+  font-family: "Montserrat", sans-serif;
 }
 
 /* Dark and light mode */

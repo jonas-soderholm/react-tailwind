@@ -23,20 +23,6 @@ function Projects() {
       image: "/450.png",
       url: "https://jonas-450.netlify.app/",
     },
-    {
-      title: "Three.js3, 3D scroller3",
-      description: "My three.js project3",
-      language: ["zz", "sss"],
-      image: "/phone-app.png",
-      url: "https://trashyu.netlify.app",
-    },
-    {
-      title: "Three.js3, 3D scroller3",
-      description: "My three.js project3",
-      language: ["zz"],
-      image: "/phone-app.png",
-      url: "https://trashyu.netlify.app",
-    },
   ];
 
   const handleCardClick = (url) => {
@@ -116,8 +102,8 @@ function Projects() {
         <div className="text-2xl body-text-medium">Have a look at my latest work!</div>
       </div>
       <div className="toggle-buttons flex justify-center mt-4 mx-4">
-        <ScrollButton position="left" onClick={() => toggleClick("left", 500)} />
-        <ScrollButton position="right" onClick={() => toggleClick("right", 500)} />
+        {/* <ScrollButton position="left" onClick={() => toggleClick("left", 500)} />
+        <ScrollButton position="right" onClick={() => toggleClick("right", 500)} /> */}
       </div>
 
       <div
@@ -125,12 +111,13 @@ function Projects() {
         style={{ maxWidth: "1350px" }}
         ref={containerRef}
       >
-        <ScrollContainer
-          className={`containerZZ individual-cards flex m-5 gap-5 ml-4 mr-4 md:w-[2200px] w-[1000px]`}
+        <div
+          // className={`containerZZ individual-cards flex m-5 gap-5 ml-4 mr-4 md:w-[2200px] w-[1000px]`}
+          className={`containerZZ individual-cards flex m-5 gap-5 ml-4 mr-4 md:justify-center`}
           style={{ height: "auto" }}
         >
           <RenderCards />
-        </ScrollContainer>
+        </div>
       </div>
     </>
   );
