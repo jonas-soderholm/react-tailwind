@@ -9,6 +9,7 @@ const toolsData1 = [
   { logoSrc: "/threejs-logo.png", name: "Three.js" },
   { logoSrc: "/docker-logo.png", name: "Docker" },
   { logoSrc: "/mysql-logo.png", name: "MySQL" },
+  { logoSrc: "/cloud-logo.png", name: "PaaS" },
   { logoSrc: "/tailwind-logo.png", name: "Tailwind" },
   { logoSrc: "/css-logo.png", name: "CSS" },
   { logoSrc: "/html-logo.png", name: "HTML" },
