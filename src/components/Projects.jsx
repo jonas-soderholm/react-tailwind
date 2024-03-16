@@ -14,7 +14,7 @@ function Projects() {
         "Share your marks!",
       language: ["React", "Node.js", "Express", "MySql"],
       image: "/trash-tagger.png",
-      url: "https://trashyu.netlify.app",
+      url: "https://trash-tagger.netlify.app",
     },
     {
       title: "3D Showroom",
