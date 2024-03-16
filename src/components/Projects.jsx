@@ -21,7 +21,7 @@ function Projects() {
       description: "See KTM EXC 450",
       language: ["Three.js", "React Fiber"],
       image: "/450.png",
-      url: "https://jonas-450.netlify.app/",
+      url: "https://project-450.netlify.app/",
     },
   ];
 
